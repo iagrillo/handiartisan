@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../ui/app_theme.dart';
 
 class UITextArea extends StatelessWidget {
   final TextEditingController controller;
@@ -28,8 +29,8 @@ class UITextArea extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (label != null) ...[
-          Text(label!, style: TextStyle(fontWeight: FontWeight.bold)),
-          SizedBox(height: 4),
+          Text(label!, style: AppTheme.labelLarge),
+          const SizedBox(height: AppTheme.spaceXS),
         ],
         TextField(
           controller: controller,
@@ -37,11 +38,10 @@ class UITextArea extends StatelessWidget {
           maxLines: maxLines,
           enabled: enabled,
           onChanged: onChanged,
+          style: AppTheme.bodyMedium,
           decoration: InputDecoration(
             hintText: hint,
             errorText: errorText,
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-            contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           ),
         ),
       ],

@@ -1,0 +1,459 @@
+﻿--------- beginning of main
+03-28 14:31:51.458   674   674 E TlcKM   : (keymaster_error_t)tci->response.header.returnCode == -1000
+03-28 14:31:51.458   674   674 E TlcKM   : transact(session_handle, tci) == -1000
+03-28 14:31:51.458   674   674 E TlcKM   : (maybe_last_time ? submit_last : submit)(session, op, &input_map, &input_consumed, &output_map, &output_used, auth_token, ctx) == -1000
+03-28 14:31:51.459   674   674 E TlcKM   : split_update_chunks(session, op, true, input, &input_consumed, output ? const_cast< uint8_t *>(output->data) : NULL, output ? output->data + output->data_length : NULL, &output_used, auth_token, update_chunk, final_chunk, &fin) == -1000
+03-28 14:31:51.459   674   674 E TlcKM   : lookup_operation: op 0xb4e80136d3947429 not found
+03-28 14:31:51.459   674   674 E TlcKM   : lookup_operation(session, operation_handle, &op) == -28
+03-28 14:31:51.460  4322 23166 E Athena  : Task-Athena-ire-dsu, g(d.java:11)
+03-28 14:31:51.460  4322 23166 E Athena  : %s
+03-28 14:31:51.477  4322 23166 I Athena  : Task-Athena-ire-dsu, k(q.java:144)
+03-28 14:31:51.477  4322 23166 I Athena  : --> upload:{"host":"https:\/\/ire-dsu.shalltry.com\/athena\/checkpoint\/v3\/upload","requestId":22387357,"packetId":"shexpaux","events":[{"tid":999960000004,"event":"location","count":1}]}
+03-28 14:31:51.481   916 22254 I resolv  : GetAddrInfoHandler::run: {102 786534 102 983142 1000 0}
+03-28 14:31:51.483   916 22255 I resolv  : res_nmkquery: (QUERY, IN, A)
+03-28 14:31:51.501   916 22255 I resolv  : res_nsend: used send_dg 133 terrno: 0
+03-28 14:31:51.501   916 22255 I resolv  : doQuery: rcode=0, ancount=3, return value=133
+03-28 14:31:51.626   916 23017 I netd    : setProcSysNet(4, 2, wlan0, retrans_time_ms, 750) <0.83ms>
+03-28 14:31:51.627   916 23017 I netd    : setProcSysNet(4, 2, wlan0, ucast_solicit, 10) <0.37ms>
+03-28 14:31:51.629   916 23017 I netd    : setProcSysNet(6, 2, wlan0, retrans_time_ms, 750) <0.57ms>
+03-28 14:31:51.630   916 23017 I netd    : setProcSysNet(6, 2, wlan0, ucast_solicit, 10) <0.32ms>
+03-28 14:31:51.641   957  1044 I libPerfCtl: xgfGetFPS pid:15375 fps:-1
+03-28 14:31:51.641   957  1044 I AppThermalMode: [perfNotifyThermalState] hdl:0
+03-28 14:31:51.641   957  1044 I AppThermalMode: [findAppThermalIdx] Fail: appThermalModeEnable: 0,currentFPS: -1,fg->pid:15375
+03-28 14:31:51.641   957  1044 I AppThermalMode: [perfNotifyThermalState] appThermalIdx -1:
+--------- beginning of system
+03-28 14:31:51.659  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.661  1790  2914 E TranDynamicBarAnimControllerImpl: TranDynamicBarAnimControllerImpl setSimplifyAnimByLauncherType pkgName:com.handihub.global
+03-28 14:31:51.662  1790  2914 E TranDynamicBarAnimControllerImpl: end setSimplifyAnimByLauncherType mSimplifyAnimOpenPkgName:com.handihub.global simplifyAnimByLauncherType:0
+03-28 14:31:51.662  1790  2914 E ActivityTaskManager: agaresPreload error: activityInfo is null
+03-28 14:31:51.662  1790  1838 I mtkpower_client: perf_cus_lock_hint hint:105, dur:150, pid:1790
+03-28 14:31:51.663  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.664  1790  1838 I mtkpower_client: perf_cus_lock_hint, ret_hdl:19566
+03-28 14:31:51.664  1790  1838 I PowerHalMgrImpl: hdl:19566, pid:1790 
+03-28 14:31:51.664   957  1061 I libPowerHal: [setClusterFreq] MTKPOWER_HINT_START_ACTIVITY_INNER: sysfs_freq set cpu freq: 1300000 1300000 1300000 1300000 
+03-28 14:31:51.666  1790  2914 W SystemBinderBigCoreFeature: [setAffinity] Pid:2914 mask:192
+03-28 14:31:51.667  1790  2914 I Hiber/fastState: do fastFreeze reason=appStart
+03-28 14:31:51.667  1790  2914 I ActivityTaskManager: floatWindow: multiWindowId = 0
+03-28 14:31:51.667  1790  2914 W ActivityTaskManager: callingPackage for (uid=2000, pid=22260) has no WPC
+03-28 14:31:51.667  1790  2914 I ActivityTaskManager: TaskLaunchParamsModifier: pkgName = null, isMultiWindowTaskDisplayArea  = false
+03-28 14:31:51.667  1790  2977 W Hiber/fastState: uid=10252 is default-app
+03-28 14:31:51.668  1790  2977 W Hiber/fastState: uid=10205 is default-app
+03-28 14:31:51.668  1790  2977 W Hiber/fastState: uid=10599 is resume
+03-28 14:31:51.668  1790  2914 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_ORIENTATION_OVERRIDE
+03-28 14:31:51.669  1790  2350 I Hiber/nativeServiceClient: check binder uid=10098
+03-28 14:31:51.669  1790  2914 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_RESIZEABLE_ACTIVITY_OVERRIDES
+03-28 14:31:51.670  1790  2914 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_MIN_ASPECT_RATIO_OVERRIDE
+03-28 14:31:51.671  1790  2914 I ActivityTaskManager: TaskLaunchParamsModifier: pkgName = null, isMultiWindowTaskDisplayArea  = false
+03-28 14:31:51.671  1790  2914 I ActivityTaskManager: TaskLaunchParamsModifier: pkgName = null
+03-28 14:31:51.671  1790  2914 I ActivityTaskManager: TaskLaunchParamsModifier: pkgName = null, isMultiWindowTaskDisplayArea  = false
+03-28 14:31:51.671  1790  2914 I ActivityTaskManager: TaskLaunchParamsModifier: pkgName = null
+03-28 14:31:51.672  1790  2914 I ActivityTaskManager: needHookReparentToDefaultDisplay: sourceRecord = null,r = ActivityRecord{15cce32 u0 com.handihub.global/.MainActivity t-1}, tda = DefaultTaskDisplayArea@242129457
+03-28 14:31:51.673  1790  2977 I Hiber/fastState: fastFreeze reason=appStart size=9 uids=[10098, 10155, 10204, 10214, 10216, 10257, 10338, 10427, 10519] about costTime=6ms
+03-28 14:31:51.673  1790  2350 I Hiber/nativeServiceClient: check binder uid=10155
+03-28 14:31:51.674  1790  2350 I Hiber/nativeServiceClient: check binder uid=10204
+03-28 14:31:51.674  1790  2914 I ActivityTaskManager: START u0 {flg=0x10000000 cmp=com.handihub.global/.MainActivity} with LAUNCH_SINGLE_TOP from uid 2000 (BAL_ALLOW_PERMISSION) result code=3
+03-28 14:31:51.675  1790  2350 I Hiber/nativeServiceClient: check binder uid=10214
+03-28 14:31:51.676  1790  2350 I Hiber/nativeServiceClient: check binder uid=10216
+03-28 14:31:51.680  1790  2350 I Hiber/nativeServiceClient: check binder uid=10257
+03-28 14:31:51.680  1790  2350 I Hiber/nativeServiceClient: check binder uid=10338
+03-28 14:31:51.681  1790  2350 I Hiber/nativeServiceClient: check binder uid=10427
+03-28 14:31:51.682  1790  2350 I Hiber/nativeServiceClient: check binder uid=10519
+03-28 14:31:51.697  1790  2914 I Hiber/fastState: do fastUnfreeze reason=delay from activityIdle delay=1470
+03-28 14:31:51.698  1790  2914 I PowerHalWrapper: amsBoostStop AMS_BOOST_PACK_SWITCH:false, AMS_BOOST_ACT_SWITCH:false, AMS_BOOST_PROCESS_CREATE:false, AMS_BOOST_PROCESS_CREATE_FOR_GAME:false, AMS_BOOST_HOT_LAUNCH:false 
+03-28 14:31:51.705  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.705  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.705  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.705  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.705  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.705  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.705  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.705  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.705  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.705  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.705  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:51.707  1006  1006 I BufferQueueProducer: [SurfaceView[com.handihub.global/com.handihub.global.MainActivity](BLAST)#10409](this:0xb40000765f10dd78,id:-1,api:0,p:-1,c:1006) queueBuffer: fps=4.99 dur=10423.81 max=9957.60 min=7.98
+03-28 14:31:51.709   939  1334 I hwcomposer: [HWCDisplay] [Display_0 (type:1)] fps:0.165912,dur:6027.30,max:6027.30,min:6027.30  
+03-28 14:31:51.746  1790  1837 I Griffin/MemoryMonitorManager: ProcessRecord= ProcessRecord{4ac190 15375:com.handihub.global/u0a599} pss= 434 threshold= 3072
+03-28 14:31:51.769  1790  1837 I Griffin/MemoryMonitorManager: ProcessRecord= ProcessRecord{efd4456 21935:com.transsion.iotcard/u0a519} pss= 25 threshold= 3072
+03-28 14:31:51.790  1790  1837 I Griffin/MemoryMonitorManager: ProcessRecord= ProcessRecord{b36235e 21899:com.transsion.tabe/1000} pss= 9 threshold= 3072
+03-28 14:31:51.818   957  1061 I mtkpower@impl: [powerd_req] TIMER_MSG_PERF_LOCK_TIMEOUT hdl:19566
+03-28 14:31:51.819   957  1061 I libPowerHal: [setClusterFreq] MTKPOWER_HINT_START_ACTIVITY_INNER: sysfs_freq set cpu freq: -1 1300000 -1 1300000 
+03-28 14:31:51.819   957  1061 I libPowerHal: [PD] MTKPOWER_HINT_START_ACTIVITY_INNER update cmd:1404300 param:0
+03-28 14:31:51.819   957  1061 I libPowerHal: [PD] MTKPOWER_HINT_START_ACTIVITY_INNER update cmd:1408100 param:0
+03-28 14:31:51.947  1790  2326 I tranpm/NormalReclaimer: memAvailable : 1347032
+03-28 14:31:51.949  1790  2326 I tranpm/NormalReclaimer: doReclaim gap: 598568
+03-28 14:31:51.955  1790  2326 I tranpm/AppPurner:  kill info -- AppPruner: Reclaimed 0KB while requirement is 598568KB effective:false
+03-28 14:31:51.955  1790  2326 I tranpm/NormalReclaimer: prunerReclaimSizeKb=0
+03-28 14:31:52.006  1790  2326 I tranpm/CommonReclaim-recentReclaim: Final candidate bg apps size 1 while expect size 9,isCritical:false
+03-28 14:31:52.057  4322 23166 I Athena  : Task-Athena-ire-dsu, i(q.java:25)
+03-28 14:31:52.058  4322 23166 I Athena  : <-- upload success:{"requestId":22387357,"code":0,"message":"suc","events":[{"tid":999960000004,"event":"location","count":1}]}
+03-28 14:31:52.138  1790  2326 I tranpm/CommonReclaim-ProcessReclaimer: kill info -- processReclaim:  request: 598568 releaseSize: 0 killTaskCount: 0 exemptCount∩╝Ü 48 effective: false
+03-28 14:31:52.159   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg: Get from client TYPE=thermal_hal_notify NAME=SKIN
+03-28 14:31:52.159   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg:name.c_str():SKIN
+03-28 14:31:52.159   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg:tz notify:SKIN
+03-28 14:31:52.159   944   958 I android.hardware.thermal@2.0-service.mtk: Wait to accept a connection
+03-28 14:31:52.160   944   958 I android.hardware.thermal@2.0-impl: Sending notification:  Type: SKIN Name: SKIN CurrentValue: 49.357 ThrottlingStatus: SEVERE
+03-28 14:31:52.160   944   958 I android.hardware.thermal@2.0-impl: sendThermalChangedCallback
+03-28 14:31:52.587   944   944 I android.hardware.thermal@2.0-service.mtk: fill_temperatures filterType1 name: SKIN type: SKIN throttlingStatus: SEVERE value: 49.357 ret_temps size 0
+03-28 14:31:53.160   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg: Get from client TYPE=thermal_hal_notify NAME=SKIN
+03-28 14:31:53.160   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg:name.c_str():SKIN
+03-28 14:31:53.160   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg:tz notify:SKIN
+03-28 14:31:53.161   944   958 I android.hardware.thermal@2.0-service.mtk: Wait to accept a connection
+03-28 14:31:53.161   944   958 I android.hardware.thermal@2.0-impl: Sending notification:  Type: SKIN Name: SKIN CurrentValue: 49.357 ThrottlingStatus: SEVERE
+03-28 14:31:53.162   944   958 I android.hardware.thermal@2.0-impl: sendThermalChangedCallback
+03-28 14:31:53.174  1790  2977 I Hiber/fastState: fastUnFreeze reason=delay from activityIdle size=9 uids=[10098, 10155, 10204, 10214, 10216, 10257, 10338, 10427, 10519] about costTime=4ms
+03-28 14:31:53.179  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:53.184  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:53.191  1790  2347 I Hiber/importantScene: default_sms: packageName=com.truecaller
+03-28 14:31:53.191  1790  2347 I Hiber/appStateMachine: uid:10205, pkg=com.truecaller  can't transition from R to F ,importantcase is : default_sms
+03-28 14:31:53.219  1790  2347 I Hiber/importantScene: widget: packageName=com.whatsapp
+03-28 14:31:53.220  1790  2347 I Hiber/appStateMachine: uid:10204, pkg=com.whatsapp  can't transition from R to F ,importantcase is : widget
+03-28 14:31:53.502  1790  2041 I TranWifiSmartAssistantController: start current network monitor 
+03-28 14:31:53.503  1790  2041 I TranWifiSmartAssistantController: userIgnored :false isScoredCurrentNetwork :true
+03-28 14:31:53.503  1790  2041 I TranWifiSmartAssistantController: mCurrentNetwork :102 SSID :"iagrillo"
+03-28 14:31:53.504  1790  2041 I WifiNetworkQuality: :index 41 ,Too short since last network selection: 40335 ms. Skip network selection.
+03-28 14:31:53.504  1790  2041 I TranWifiSmartAssistantController: mNoCandidateCount : 41
+03-28 14:31:53.504  1790  2041 I TranWifiSmartAssistantController: ====>>rssi :-73
+03-28 14:31:53.878  2372  2372 I StatusBarNetworkRateView: wifi is default. hide second network rate view. StatusBarNetworkRateView subId=4, isFirstSimCard=false, mLocation=QS_NEW NetworkRateState=NetworkRateState{visible=true, activeMobileDataSubId=2, totalRate=1.47, netWorkState=1, isAirplane=false, netRateStateBySettingGlobal=1, networkRate='1.47', networkRateUnit='KB/S'}
+03-28 14:31:53.920  1006  1006 I BufferQueueProducer: [StatusBar#96](this:0xb40000765f07f758,id:-1,api:0,p:-1,c:1006) queueBuffer: fps=0.12 dur=8240.15 max=8240.15 min=8240.15
+03-28 14:31:53.922   939  1334 I hwcomposer: [HWCDisplay] [Display_0 (type:1)] fps:0.451940,dur:2212.68,max:2212.68,min:2212.68  
+03-28 14:31:53.951  1790  2326 I tranpm/NormalReclaimer: memAvailable : 1340116
+03-28 14:31:53.953  1790  2326 I tranpm/NormalReclaimer: doReclaim gap: 605484
+03-28 14:31:53.957  1790  2326 I tranpm/AppPurner:  kill info -- AppPruner: Reclaimed 0KB while requirement is 605484KB effective:false
+03-28 14:31:53.958  1790  2326 I tranpm/NormalReclaimer: prunerReclaimSizeKb=0
+03-28 14:31:54.161   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg: Get from client TYPE=thermal_hal_notify NAME=SKIN
+03-28 14:31:54.161   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg:name.c_str():SKIN
+03-28 14:31:54.161   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg:tz notify:SKIN
+03-28 14:31:54.161   944   958 I android.hardware.thermal@2.0-service.mtk: Wait to accept a connection
+03-28 14:31:54.162   944   958 I android.hardware.thermal@2.0-impl: Sending notification:  Type: SKIN Name: SKIN CurrentValue: 49.357 ThrottlingStatus: SEVERE
+03-28 14:31:54.162   944   958 I android.hardware.thermal@2.0-impl: sendThermalChangedCallback
+03-28 14:31:54.187  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:54.194  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:54.571  1790  2347 I Hiber/importantScene: isTrafficActive uid:10257 speed :0
+03-28 14:31:54.572  1790  2347 I Hiber/appStateMachine: uid:10257 enter FrozenState
+03-28 14:31:54.578  1790  2347 I Hiber/stateManager: freeze uid: 10257 com.instagram.android costTime=6ms ,last unfreeze 5s ago
+03-28 14:31:54.578  1790  2347 I Hiber/restrictionPolicy: uid:10257  pkgName:com.instagram.android isAllowedNet
+03-28 14:31:54.579  1790  2348 I Hiber/hiber: msg for start proxy frozen state
+03-28 14:31:54.579  1790  2348 I Hiber/proxyManager: p_service: 10257
+03-28 14:31:54.579  1790  2348 I Hiber/proxyManager: p_job: 10257 pkgName=com.instagram.android which=2
+03-28 14:31:54.579  1790  2350 I Hiber/nativeServiceClient: watch app network uid=10257, persistent=0
+03-28 14:31:54.579  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:54.586  1790  2348 I Hiber/proxyManager: p_sensor: uid=10257, pkgName=com.instagram.android
+03-28 14:31:54.588  1790  2976 I Hiber/stateManager: unfreeze uid: 10257 com.instagram.android pids:[21066]  reason:executingComponent   cpninfo: costTime=8ms ,last freeze 0s ago
+03-28 14:31:54.588  1790  2347 I Hiber/appStateMachine: uid=10257, pkg=com.instagram.android, transition from Frozen to Running, reason=executingComponent
+03-28 14:31:54.588  1790  2347 I Hiber/appStateMachine: uid:10257 exit FrozenState
+03-28 14:31:54.589  1790  2348 I Hiber/proxyManager: up_service: 10257
+03-28 14:31:54.589  1790  2348 I Hiber/proxyManager: un_job: 10257
+03-28 14:31:54.592  1790  2348 I Hiber/proxyManager: up_sensor: uid=10257, pkgName=com.instagram.android
+03-28 14:31:54.701  2599  3245 I TranTele/TranPhoneInterfaceManager: [onReceive] action: android.net.wifi.RSSI_CHANGED
+03-28 14:31:54.720  3767  6400 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-28 14:31:54.721  3767  6400 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-28 14:31:54.763   916 22273 I resolv  : GetAddrInfoHandler::run: {102 102 102 983142 10427 0}
+03-28 14:31:54.764   916 22274 I resolv  : res_nmkquery: (QUERY, IN, A)
+03-28 14:31:54.765   916 22274 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0xb400007d51534fd0
+03-28 14:31:54.765   916 22274 I resolv  : doQuery: rcode=0, ancount=4, return value=231
+03-28 14:31:54.768  2599  2881 W TelephonyPermissions: reportAccessDeniedToReadIdentifiers:devian.tubemate.v3:getActiveSubscriptionInfoList:2
+03-28 14:31:54.787  1006  1006 E SurfaceFlinger: MtkDuration override mode is disabled
+03-28 14:31:54.787  1006  1006 I PowerHalWrapper: updateFps(): 120
+03-28 14:31:54.787   939  1334 I hwcomposer: [HWC] (0) displaySetActiveConfig config:0  
+03-28 14:31:54.788  2599  2881 W TelephonyPermissions: reportAccessDeniedToReadIdentifiers:devian.tubemate.v3:getActiveSubscriptionInfoList:4
+03-28 14:31:54.791  1790  1829 I DisplayDeviceRepository: Display device changed: DisplayDeviceInfo{"Built-in Screen": uniqueId="local:0", 1080 x 2436, modeId 2, renderFrameRate 60.000004, defaultModeId 1, userPreferredModeId -1, supportedModes [{id=1, width=1080, height=2436, fps=120.00001, vsync=120.00001, synthetic=false, alternativeRefreshRates=[60.0], supportedHdrTypes=[]}, {id=2, width=1080, height=2436, fps=60.0, vsync=60.0, synthetic=false, alternativeRefreshRates=[120.00001], supportedHdrTypes=[]}], colorMode 0, supportedColorModes [0, 7, 9], hdrCapabilities HdrCapabilities{mSupportedHdrTypes=[], mMaxLuminance=500.0, mMaxAverageLuminance=500.0, mMinLuminance=0.0}, allmSupported false, gameContentTypeSupported false, density 480, 394.818 x 392.828 dpi, appVsyncOff 2400001, presDeadline 28600000, cutout DisplayCutout{insets=Rect(0, 108 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(468, 0 - 612, 108), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=1080 displayHeight=2436 physicalDisplayWidth=1080 physicalDisplayHeight=2436 density={3.0} cutoutSpec={M -24,0 L -24,36 L 24,36 L 24,0 Z @dp} rotation={0} scale={1.0} physicalPixelDisplaySizeRatio={1.0}}} sideOverrides={}}, touch INTERNAL, rotation 0, type INTERNAL, address {port=0}, deviceProductInfo null, state ON, committedState ON, frameRateOverride {uid=1000 frameRateHz=60.000004} {uid=10159 frameRateHz=120.00001} {uid=10599 frameRateHz=120.00001} , brightnessMinimum 0.0, brightnessMaximum 1.0, brightnessDefault 0.2, hdrSdrRatio NaN, FLAG_ALLOWED_TO_BE_DEFAULT_DISPLAY, FLAG_ROTATES_WITH_CONTENT, FLAG_SECURE, FLAG_SUPPORTS_PROTECTED_BUFFERS, FLAG_TRUSTED, installOrientation 0, displayShape DisplayShape{ spec=596679847 displayWidth=1080 displayHeight=2436 physicalPixelDisplaySizeRatio=1.0 rotation=0 offsetX=0 offsetY=0 scale=1.0}}
+03-28 14:31:54.795  1790  1829 I Griffin/DeviceState: virtualDisplayPackageName :{}
+03-28 14:31:54.798  3767  6400 I NullBinder: NullBinder for android.net.action.RECOMMEND_NETWORKS triggering remote TransactionTooLargeException due to Service without Chimera impl, calling uid: 1000, calling pid: 0
+03-28 14:31:54.799  1790  2349 I Hiber/stateManager: unfreeze uid: 10542 com.toralabs.apkextractor pids:[25731, 26028, 26028]  reason:fullAsyncBinder   cpninfo:TRANSACTION_-1 costTime=1ms ,last freeze 70s ago
+03-28 14:31:54.799  1790  2347 I Hiber/appStateMachine: uid=10542, pkg=com.toralabs.apkextractor, transition from Frozen to Running, reason=fullAsyncBinder
+03-28 14:31:54.799  1790  2347 I Hiber/appStateMachine: uid:10542 exit FrozenState
+03-28 14:31:54.800  1790  2348 I Hiber/proxyManager: up_service: 10542
+03-28 14:31:54.800  1790  2348 I Hiber/proxyManager: un_job: 10542
+03-28 14:31:54.800  1790  2348 I Hiber/proxyManager: up_sensor: uid=10542, pkgName=com.toralabs.apkextractor
+03-28 14:31:54.803  1006  1006 I PowerHalWrapper: updateFps(): 120
+03-28 14:31:54.804  1006  1006 I PowerHalWrapper: updateFps(): 120
+03-28 14:31:54.804  1790  1829 I DisplayDeviceRepository: Display device changed render timings: "Built-in Screen", renderFrameRate=120.00001, presentationDeadlineNanos=11933334, appVsyncOffsetNanos=2399998
+03-28 14:31:54.807  3767  6400 W .gms.persistent: Large reply transaction of 1056768 bytes, interface descriptor , code 1
+03-28 14:31:54.808  1790  1829 I Griffin/DeviceState: virtualDisplayPackageName :{}
+03-28 14:31:54.812   995   995 I AudioFlinger: setParameters: filtered keyvalue screen_state=on
+03-28 14:31:54.812   995   995 I AudioFlinger: +mAudioHwDevs(primary)->setParameters(): screen_state=on
+03-28 14:31:54.813   995   995 I AudioFlinger: -mAudioHwDevs(primary)->setParameters(): screen_state=on
+03-28 14:31:54.813   995   995 I AudioFlinger: +mAudioHwDevs(bluetooth)->setParameters(): screen_state=on
+03-28 14:31:54.814   995   995 I AudioFlinger: -mAudioHwDevs(bluetooth)->setParameters(): screen_state=on
+03-28 14:31:54.814   995   995 I AudioFlinger: +mAudioHwDevs(usb)->setParameters(): screen_state=on
+03-28 14:31:54.815   995   995 I AudioFlinger: -mAudioHwDevs(usb)->setParameters(): screen_state=on
+03-28 14:31:54.815   995   995 I AudioFlinger: +mAudioHwDevs(r_submix)->setParameters(): screen_state=on
+03-28 14:31:54.815   995   995 I AudioFlinger: -mAudioHwDevs(r_submix)->setParameters(): screen_state=on
+03-28 14:31:54.816   995   995 E TranFlinger: setPareters is is 0
+03-28 14:31:54.820  2599  2881 I LocationAccessPolicy: devian.tubemate.v3 is aware of fine but the app-ops permission is specifically denied.
+03-28 14:31:54.831  2599  2881 I LocationAccessPolicy: devian.tubemate.v3 is aware of fine but the app-ops permission is specifically denied.
+03-28 14:31:54.841  4983  4983 I SmartPanelService: mDisplayListener onDisplayChanged
+03-28 14:31:54.857   957  1061 I mtkpower@impl: [powerd_req] TIMER_MSG_PERF_LOCK_TIMEOUT hdl:19567
+03-28 14:31:54.857   957  1061 I libPowerHal: [PD] MTKPOWER_HINT_APP_TOUCH update cmd:3408b00 param:0
+03-28 14:31:54.909   957  1044 I libPerfCtl: xgfGetFPS pid:2372 fps:-1
+03-28 14:31:54.909   957  1044 I AppThermalMode: [perfNotifyThermalState] hdl:0
+03-28 14:31:54.909   957  1044 I AppThermalMode: [findAppThermalIdx] Fail: appThermalModeEnable: 0,currentFPS: -1,fg->pid:15375
+03-28 14:31:54.909   957  1044 I AppThermalMode: [perfNotifyThermalState] appThermalIdx -1:
+03-28 14:31:54.925  4473 12726 I ScreenTouchCollector: resetTouchPara:reason= InputEvent ACTION_UP or ACTION_CANCEL
+03-28 14:31:54.935  1006  1006 I BufferQueueProducer: [SurfaceView[com.handihub.global/com.handihub.global.MainActivity](BLAST)#10409](this:0xb40000765f10dd78,id:-1,api:0,p:-1,c:1006) queueBuffer: fps=0.31 dur=3228.09 max=3228.09 min=3228.09
+03-28 14:31:54.937   939  1334 I hwcomposer: [HWCDisplay] [Display_0 (type:1)] fps:3.940943,dur:1014.99,max:815.04,min:15.02  
+03-28 14:31:54.958  1790  1790 W NetworkTypeHelper: Failed to call buildTemplateCarrierMetered, java.lang.reflect.InvocationTargetException
+03-28 14:31:55.095  1790  1801 I system_server: Background young concurrent mark compact GC freed 12MB AllocSpace bytes, 416(8320KB) LOS objects, 8% free, 185MB/203MB, paused 3.241ms,9.456ms total 391.031ms
+03-28 14:31:55.162   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg: Get from client TYPE=thermal_hal_notify NAME=SKIN
+03-28 14:31:55.162   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg:name.c_str():SKIN
+03-28 14:31:55.162   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg:tz notify:SKIN
+03-28 14:31:55.163   944   958 I android.hardware.thermal@2.0-service.mtk: Wait to accept a connection
+03-28 14:31:55.163   944   958 I android.hardware.thermal@2.0-impl: Sending notification:  Type: SKIN Name: SKIN CurrentValue: 49.357 ThrottlingStatus: SEVERE
+03-28 14:31:55.164   944   958 I android.hardware.thermal@2.0-impl: sendThermalChangedCallback
+03-28 14:31:55.198  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:55.203  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:55.236  3767 20913 I NearbySharing: Network state changed: NetworkState(isRestricted=false, isOnline=true, isCongested=false, isMetered=false, isWifiConnected=true)
+03-28 14:31:55.414   957  1045 E libPowerHal: [getCPUFreq] error cid:2, nClusterNum:2
+03-28 14:31:55.416   957  1061 I libPowerHal: [setClusterFreq] mtkpower@1.0-se: sysfs_freq set cpu freq: 1300000 1300000 1300000 1300000 
+03-28 14:31:55.487  2599  3244 I TranTele/TranPhoneInterfaceManager: TTC - onSignalStrengthsChanged
+03-28 14:31:55.490  2599  3178 I TranPhoneSwitcher: mOthersign:4subid :4
+03-28 14:31:55.513  4473 12726 I ScreenTouchCollector: resetTouchPara:reason= InputEvent ACTION_UP or ACTION_CANCEL
+03-28 14:31:55.513   957  1061 I libPowerHal: [PD] MTKPOWER_HINT_APP_TOUCH update cmd:3408b00 param:0
+03-28 14:31:55.568  1790  2016 I input_debug: package: com.handihub.global mNeedShowSafeInput: false inputType: 32769 methodMap: true isKeyguardShowing: false enable: 0 isSplitScreen: false
+03-28 14:31:55.568 15375 15375 I ImeTracker: com.handihub.global:8fb78eb8: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+03-28 14:31:55.573  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:55.575  1790  2016 I TranMultiWindowManagerComponentImpl: hookInputMethodShown inputShown: true, connected:false, unbd:false
+03-28 14:31:55.576  1790  2016 I TranSCSourceConnectManagerImpl: hookInputMethodShown inputShown: true
+03-28 14:31:55.579   916 23017 I netd    : tetherGetStats() -> {[]} <2.97ms>
+03-28 14:31:55.582  1006  1994 I SurfaceFlinger: setDesiredDisplayModeSpecs: calling_process=system_server
+03-28 14:31:55.582  1006  1006 I SurfaceFlinger: setDesiredDisplayModeSpecs: policy={defaultModeId=0, allowGroupSwitching=false, primaryRanges={physical=[60.00 Hz, 120.00 Hz], render=[60.00 Hz, 120.00 Hz]}, appRequestRanges={physical=[0.00 Hz, 120.00 Hz], render=[0.00 Hz, 120.00 Hz]} idleScreenConfig=nullptr}
+03-28 14:31:55.582  1006  1006 I RefreshRateSelector: Display 0 policy changed
+03-28 14:31:55.582  1006  1006 I RefreshRateSelector: Previous: {defaultModeId=1, allowGroupSwitching=false, primaryRanges={physical=[60.00 Hz, 120.00 Hz], render=[60.00 Hz, 120.00 Hz]}, appRequestRanges={physical=[0.00 Hz, 120.00 Hz], render=[0.00 Hz, 120.00 Hz]} idleScreenConfig=nullptr}
+03-28 14:31:55.582  1006  1006 I RefreshRateSelector: Current:  DisplayManagerPolicy{defaultModeId=0, allowGroupSwitching=false, primaryRanges={physical=[60.00 Hz, 120.00 Hz], render=[60.00 Hz, 120.00 Hz]}, appRequestRanges={physical=[0.00 Hz, 120.00 Hz], render=[0.00 Hz, 120.00 Hz]} idleScreenConfig=nullptr}
+03-28 14:31:55.582  1006  1006 I RefreshRateSelector: 18 mode changes were performed under the previous policy
+03-28 14:31:55.584  1790  1829 I DisplayDeviceRepository: Display device changed: DisplayDeviceInfo{"Built-in Screen": uniqueId="local:0", 1080 x 2436, modeId 1, renderFrameRate 120.00001, defaultModeId 1, userPreferredModeId -1, supportedModes [{id=1, width=1080, height=2436, fps=120.00001, vsync=120.00001, synthetic=false, alternativeRefreshRates=[60.0], supportedHdrTypes=[]}, {id=2, width=1080, height=2436, fps=60.0, vsync=60.0, synthetic=false, alternativeRefreshRates=[120.00001], supportedHdrTypes=[]}], colorMode 0, supportedColorModes [0, 7, 9], hdrCapabilities HdrCapabilities{mSupportedHdrTypes=[], mMaxLuminance=500.0, mMaxAverageLuminance=500.0, mMinLuminance=0.0}, allmSupported false, gameContentTypeSupported false, density 480, 394.818 x 392.828 dpi, appVsyncOff 2399998, presDeadline 11933334, cutout DisplayCutout{insets=Rect(0, 108 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(468, 0 - 612, 108), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=1080 displayHeight=2436 physicalDisplayWidth=1080 physicalDisplayHeight=2436 density={3.0} cutoutSpec={M -24,0 L -24,36 L 24,36 L 24,0 Z @dp} rotation={0} scale={1.0} physicalPixelDisplaySizeRatio={1.0}}} sideOverrides={}}, touch INTERNAL, rotation 0, type INTERNAL, address {port=0}, deviceProductInfo null, state ON, committedState ON, frameRateOverride , brightnessMinimum 0.0, brightnessMaximum 1.0, brightnessDefault 0.2, hdrSdrRatio NaN, FLAG_ALLOWED_TO_BE_DEFAULT_DISPLAY, FLAG_ROTATES_WITH_CONTENT, FLAG_SECURE, FLAG_SUPPORTS_PROTECTED_BUFFERS, FLAG_TRUSTED, installOrientation 0, displayShape DisplayShape{ spec=596679847 displayWidth=1080 displayHeight=2436 physicalPixelDisplaySizeRatio=1.0 rotation=0 offsetX=0 offsetY=0 scale=1.0}}
+03-28 14:31:55.587  1790  1829 I Griffin/DeviceState: virtualDisplayPackageName :{}
+03-28 14:31:55.591  4983  4983 I SmartPanelService: mDisplayListener onDisplayChanged
+03-28 14:31:55.591   995   995 I AudioFlinger: setParameters: filtered keyvalue screen_state=on
+03-28 14:31:55.592   995   995 I AudioFlinger: +mAudioHwDevs(primary)->setParameters(): screen_state=on
+03-28 14:31:55.593   995   995 I AudioFlinger: -mAudioHwDevs(primary)->setParameters(): screen_state=on
+03-28 14:31:55.593   995   995 I AudioFlinger: +mAudioHwDevs(bluetooth)->setParameters(): screen_state=on
+03-28 14:31:55.594   995   995 I AudioFlinger: -mAudioHwDevs(bluetooth)->setParameters(): screen_state=on
+03-28 14:31:55.594   995   995 I AudioFlinger: +mAudioHwDevs(usb)->setParameters(): screen_state=on
+03-28 14:31:55.595   995   995 I AudioFlinger: -mAudioHwDevs(usb)->setParameters(): screen_state=on
+03-28 14:31:55.595   995   995 I AudioFlinger: +mAudioHwDevs(r_submix)->setParameters(): screen_state=on
+03-28 14:31:55.595   995   995 I AudioFlinger: -mAudioHwDevs(r_submix)->setParameters(): screen_state=on
+03-28 14:31:55.596   995   995 E TranFlinger: setPareters is is 0
+03-28 14:31:55.598  1790  1829 I DisplayDeviceRepository: Display device changed: DisplayDeviceInfo{"Built-in Screen": uniqueId="local:0", 1080 x 2436, modeId 1, renderFrameRate 120.00001, defaultModeId 1, userPreferredModeId -1, supportedModes [{id=1, width=1080, height=2436, fps=120.00001, vsync=120.00001, synthetic=false, alternativeRefreshRates=[60.0], supportedHdrTypes=[]}, {id=2, width=1080, height=2436, fps=60.0, vsync=60.0, synthetic=false, alternativeRefreshRates=[120.00001], supportedHdrTypes=[]}], colorMode 0, supportedColorModes [0, 7, 9], hdrCapabilities HdrCapabilities{mSupportedHdrTypes=[], mMaxLuminance=500.0, mMaxAverageLuminance=500.0, mMinLuminance=0.0}, allmSupported false, gameContentTypeSupported false, density 480, 394.818 x 392.828 dpi, appVsyncOff 2399998, presDeadline 11933334, cutout DisplayCutout{insets=Rect(0, 108 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(468, 0 - 612, 108), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=1080 displayHeight=2436 physicalDisplayWidth=1080 physicalDisplayHeight=2436 density={3.0} cutoutSpec={M -24,0 L -24,36 L 24,36 L 24,0 Z @dp} rotation={0} scale={1.0} physicalPixelDisplaySizeRatio={1.0}}} sideOverrides={}}, touch INTERNAL, rotation 0, type INTERNAL, address {port=0}, deviceProductInfo null, state ON, committedState ON, frameRateOverride {uid=1000 frameRateHz=120.00001} {uid=10159 frameRateHz=120.00001} {uid=10599 frameRateHz=120.00001} , brightnessMinimum 0.0, brightnessMaximum 1.0, brightnessDefault 0.2, hdrSdrRatio NaN, FLAG_ALLOWED_TO_BE_DEFAULT_DISPLAY, FLAG_ROTATES_WITH_CONTENT, FLAG_SECURE, FLAG_SUPPORTS_PROTECTED_BUFFERS, FLAG_TRUSTED, installOrientation 0, displayShape DisplayShape{ spec=596679847 displayWidth=1080 displayHeight=2436 physicalPixelDisplaySizeRatio=1.0 rotation=0 offsetX=0 offsetY=0 scale=1.0}}
+03-28 14:31:55.606  1075  1075 I FPSGO   : fpsgo_boost_sched_idle_prefer:1
+03-28 14:31:55.606  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:0, num:2, tid:1075
+03-28 14:31:55.607  1790  1829 I Griffin/DeviceState: virtualDisplayPackageName :{}
+03-28 14:31:55.607   957  1061 I libPowerHal: [setClusterFreq] mtkpower@1.0-se: sysfs_freq set cpu freq: -1 1300000 -1 1300000 
+03-28 14:31:55.607   957  1061 I libPowerHal: [PD] mtkpower@1.0-se update cmd:1408300 param:0
+03-28 14:31:55.609  1075  1075 I mtkpower_client: ret_hdl:19570
+03-28 14:31:55.609  1075  1075 I FPSGO   : perfLockAcq hdl:19570
+03-28 14:31:55.609  1075  1075 I FPSGO   : fpsgo_boost_sched_rate_ns:0
+03-28 14:31:55.609  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:0, num:12, tid:1075
+03-28 14:31:55.610  1075  1075 I mtkpower_client: ret_hdl:19571
+03-28 14:31:55.610  1075  1075 I FPSGO   : perfLockAcq hdl:19571
+03-28 14:31:55.610   957  1061 I libPowerHal: cmdSetting - unknown cmd:1438500, scmd:(null) ,param_1:0
+03-28 14:31:55.610   957  1061 I libPowerHal: cmdSetting - unknown cmd:1438800, scmd:(null) ,param_1:0
+03-28 14:31:55.617 15375 15375 E SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+03-28 14:31:55.617 15375 15375 E SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+03-28 14:31:55.618  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:55.618  1075  1075 I mtkpower_client: ret_hdl:19572
+03-28 14:31:55.619 15375 15375 E SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+03-28 14:31:55.619 15375 15375 E SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+03-28 14:31:55.625  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19572, tid:1075
+03-28 14:31:55.626   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:55.640 15375 15375 E SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+03-28 14:31:55.640 15375 15375 E SpannableStringBuilder: SPAN_EXCLUSIVE_EXCLUSIVE spans cannot have a zero length
+03-28 14:31:55.642  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:55.643  1075  1075 I mtkpower_client: ret_hdl:19573
+03-28 14:31:55.644  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19573, tid:1075
+03-28 14:31:55.645   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:55.654  1006  1994 I BufferQueueDebug: [InputMethod#10426](this:0xb40000765f0bb428,id:-1,api:0,p:-1,c:-1) BufferQueue core=(1006:/system/bin/surfaceflinger)
+03-28 14:31:55.661  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:55.662  1075  1075 I mtkpower_client: ret_hdl:19574
+03-28 14:31:55.664  1790  2728 I WindowManager: Relayout Window{3c74a26 u0 InputMethod}: oldVis=8 newVis=0 focusMayChange = true requestedWidth = 1080 requestedHeight = 2328 outFrames = ClientWindowFrames{frame=[0,108][1080,2436] display=[0,108][1080,2436] parentFrame=[0,0][0,0]} outSurfaceControl = Surface(name=InputMethod)/@0x505aadb
+03-28 14:31:55.668  1006  1006 I BufferQueueProducer: [NavigationBar0#92](this:0xb40000765f071388,id:-1,api:0,p:-1,c:1006) queueBuffer: fps=0.39 dur=54157.87 max=53949.96 min=7.81
+03-28 14:31:55.669  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19574, tid:1075
+03-28 14:31:55.671   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:55.686  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:55.689  1075  1075 I mtkpower_client: ret_hdl:19575
+03-28 14:31:55.690  1006  1091 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+03-28 14:31:55.718  1006  1091 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+03-28 14:31:55.726  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19575, tid:1075
+03-28 14:31:55.727   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:55.729  1006  3240 I BufferQueueDebug: [Surface(name=222661e NavigationBar0)/@0x3da21c4 - animation-leash of insets_animation#10427](this:0xb40000765f05a708,id:-1,api:0,p:-1,c:-1) BufferQueue core=(1006:/system/bin/surfaceflinger)
+03-28 14:31:55.733 15375 15375 I InsetsController: Insets animation onAnimationStart mShow:true, mDurationMs:700, types:ime
+03-28 14:31:55.733  1790  1838 I mtkpower_client: perf_cus_lock_hint hint:101, dur:1000, pid:1790
+03-28 14:31:55.734  1790  1838 I mtkpower_client: perf_cus_lock_hint, ret_hdl:19576
+03-28 14:31:55.734   957  1061 I libPowerHal: [setGPUFreq] MTKPOWER_HINT_LAUNCHER_ANIMA user set gpu freq min:0, max:-1
+03-28 14:31:55.734   957  1061 I libPowerHal: MTKPOWER_HINT_LAUNCHER_ANIMA: set gpu opp level: 0
+03-28 14:31:55.734  1790  1838 I PowerHalMgrImpl: hdl:19576, pid:1790 
+03-28 14:31:55.737   957  1061 I libPowerHal: MTKPOWER_HINT_LAUNCHER_ANIMA: set gpu opp level max: 0
+03-28 14:31:55.737   957  1061 I libPowerHal: [setGPUFreq] Soft min/max = (0, 0); Hard min/max = (44, 0)
+03-28 14:31:55.737   957  1061 I libPowerHal: [setGPUFreq] final min/max = (0, 0)
+03-28 14:31:55.737   957  1061 I libPowerHal: MTKPOWER_HINT_LAUNCHER_ANIMA: set gpu opp level: 0
+03-28 14:31:55.737   957  1061 I libPowerHal: MTKPOWER_HINT_LAUNCHER_ANIMA: set gpu opp level max: 0
+03-28 14:31:55.738   957  1061 I libPowerHal: [thermal ux] update cluster0 to freqToSet:2000000 maxToSet:2000000
+03-28 14:31:55.739   957  1061 I libPowerHal: [thermal ux] update cluster1 to freqToSet:2200000 maxToSet:2200000
+03-28 14:31:55.739   957  1061 I libPowerHal: [setClusterFreq] MTKPOWER_HINT_LAUNCHER_ANIMA: sysfs_freq set cpu freq: 2000000 -1 2200000 -1 
+03-28 14:31:55.739   957  1061 I libPowerHal: [setClusterHardFreq] MTKPOWER_HINT_LAUNCHER_ANIMA: hard userlimit set cpu freq: -1 1300000 -1 1300000
+03-28 14:31:55.739   957  1061 I libPowerHal: [thermal ux] update cluster0 to freqToSet:2000000 maxToSet:2000000
+03-28 14:31:55.739   957  1061 I libPowerHal: [thermal ux] update cluster1 to freqToSet:2200000 maxToSet:2200000
+03-28 14:31:55.739   957  1061 I libPowerHal: [setClusterFreq] MTKPOWER_HINT_LAUNCHER_ANIMA: sysfs_freq set cpu freq: 2000000 -1 2200000 -1 
+03-28 14:31:55.742  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:55.742  1790  1830 I WindowManager:   isAnimating=false  okToAnimate=true  win=Window{3c74a26 u0 InputMethod}
+03-28 14:31:55.743  1075  1075 I mtkpower_client: ret_hdl:19577
+03-28 14:31:55.752  1006  1006 I BufferQueueProducer: [com.handihub.global/com.handihub.global.MainActivity#10404](this:0xb40000765f13b678,id:-1,api:0,p:-1,c:1006) queueBuffer: fps=0.63 dur=54208.20 max=53534.24 min=8.13
+03-28 14:31:55.765  2599  3178 I TranPhoneSwitcher: mDefaultsign:4subid :2
+03-28 14:31:55.767  2599  3244 I TranTele/TranPhoneInterfaceManager: TTC - onSignalStrengthsChanged
+03-28 14:31:55.772  2372  2372 I StatusBarModePerDisplayRepository: isInFullscreenMode:false com.handihub.global
+03-28 14:31:55.775  1006  3240 I SurfaceFlinger: onHandleDestroyed: name=Surface(name=222661e NavigationBar0)/@0x3da21c4 - animation-leash of insets_animation#10425, layerId=10425, parentId=0
+03-28 14:31:55.777  1006  1006 I BufferQueueDebug: [Surface(name=222661e NavigationBar0)/@0x3da21c4 - animation-leash of insets_animation#10425](this:0xb40000765f1249f8,id:-1,api:0,p:-1,c:1006) onDestructor()
+03-28 14:31:55.795  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19577, tid:1075
+03-28 14:31:55.796   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:55.803  1006  1091 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+03-28 14:31:55.817  1006  1091 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+03-28 14:31:55.817  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:55.819  1075  1075 I mtkpower_client: ret_hdl:19578
+03-28 14:31:55.836  1006  1091 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+03-28 14:31:55.869  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19578, tid:1075
+03-28 14:31:55.870   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:55.875  1006  1091 E surfaceflinger: == MALI DEBUG ===eglp_winsys_populate_image_templates ==12288
+03-28 14:31:55.885  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:55.886  1075  1075 I mtkpower_client: ret_hdl:19579
+03-28 14:31:55.909   957  1044 I libPerfCtl: xgfGetFPS pid:2372 fps:94
+03-28 14:31:55.909   957  1044 I AppThermalMode: [perfNotifyThermalState] hdl:0
+03-28 14:31:55.909   957  1044 I AppThermalMode: [findAppThermalIdx] Fail: appThermalModeEnable: 0,currentFPS: -1,fg->pid:15375
+03-28 14:31:55.909   957  1044 I AppThermalMode: [perfNotifyThermalState] appThermalIdx -1:
+03-28 14:31:55.909   957  1044 I libPerfCtl: xgfGetFPS pid:8097 fps:55
+03-28 14:31:55.909   957  1044 I AppThermalMode: [perfNotifyThermalState] hdl:0
+03-28 14:31:55.909   957  1044 I AppThermalMode: [findAppThermalIdx] Fail: appThermalModeEnable: 0,currentFPS: -1,fg->pid:15375
+03-28 14:31:55.909   957  1044 I AppThermalMode: [perfNotifyThermalState] appThermalIdx -1:
+03-28 14:31:55.909   957  1044 I libPerfCtl: xgfGetFPS pid:15375 fps:70
+03-28 14:31:55.909   957  1044 I AppThermalMode: [perfNotifyThermalState] hdl:0
+03-28 14:31:55.909   957  1044 I AppThermalMode: [findAppThermalIdx] Fail: appThermalModeEnable: 0,currentFPS: -1,fg->pid:15375
+03-28 14:31:55.909   957  1044 I AppThermalMode: [perfNotifyThermalState] appThermalIdx -1:
+03-28 14:31:55.909   957  1044 I libPowerHal: [updateFPS] pid(15375) : -1 => 90
+03-28 14:31:55.910   957  1061 I libPowerHal: [perfNotifyAppState] pack:com.handihub.global, act:com.handihub.global.MainActivity, state:5, pid:15375, uid:10599, fps:90
+03-28 14:31:55.911   957  1061 I UxUtility: notifyForegroundApp pack:com.handihub.global, uid:10599
+03-28 14:31:55.911   957  1061 I TouchUtility: notifyAppState error = NULL
+03-28 14:31:55.911  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19579, tid:1075
+03-28 14:31:55.912   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:55.928  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:55.928  1075  1075 I mtkpower_client: ret_hdl:19580
+03-28 14:31:55.947  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19580, tid:1075
+03-28 14:31:55.948   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:55.951  1006  1006 I BufferQueueProducer: [SurfaceView[com.handihub.global/com.handihub.global.MainActivity](BLAST)#10409](this:0xb40000765f10dd78,id:-1,api:0,p:-1,c:1006) queueBuffer: fps=10.83 dur=1015.87 max=633.20 min=8.57
+03-28 14:31:55.954   939  1334 I hwcomposer: [HWCDisplay] [Display_0 (type:1)] fps:37.348404,dur:1017.45,max:633.47,min:5.74  
+03-28 14:31:55.955  1790  2326 I tranpm/NormalReclaimer: memAvailable : 1234156
+03-28 14:31:55.957  1790  2326 I tranpm/NormalReclaimer: doReclaim gap: 711444
+03-28 14:31:55.961  1790  2326 I tranpm/AppPurner:  kill info -- AppPruner: Reclaimed 0KB while requirement is 711444KB effective:false
+03-28 14:31:55.961  1790  2326 I tranpm/NormalReclaimer: prunerReclaimSizeKb=0
+03-28 14:31:55.964  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:55.965  1075  1075 I mtkpower_client: ret_hdl:19581
+03-28 14:31:56.000  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19581, tid:1075
+03-28 14:31:56.001   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:56.001  1790  2326 I tranpm/CommonReclaim-recentReclaim: Final candidate bg apps size 1 while expect size 9,isCritical:false
+03-28 14:31:56.017  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:56.018  1075  1075 I mtkpower_client: ret_hdl:19582
+03-28 14:31:56.076  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19582, tid:1075
+03-28 14:31:56.077   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:56.103  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:56.104  1075  1075 I mtkpower_client: ret_hdl:19583
+03-28 14:31:56.107  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19583, tid:1075
+03-28 14:31:56.108   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:56.113  1790  2326 I tranpm/CommonReclaim-ProcessReclaimer: kill info -- processReclaim:  request: 711444 releaseSize: 0 killTaskCount: 0 exemptCount∩╝Ü 48 effective: false
+03-28 14:31:56.124  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:56.125  1075  1075 I mtkpower_client: ret_hdl:19584
+03-28 14:31:56.165   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg: Get from client TYPE=thermal_hal_notify NAME=SKIN
+03-28 14:31:56.165   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg:name.c_str():SKIN
+03-28 14:31:56.165   944   958 W android.hardware.thermal@2.0-service.mtk: parseMsg:tz notify:SKIN
+03-28 14:31:56.165   944   958 I android.hardware.thermal@2.0-service.mtk: Wait to accept a connection
+03-28 14:31:56.167   944   958 I android.hardware.thermal@2.0-impl: Sending notification:  Type: SKIN Name: SKIN CurrentValue: 49.285 ThrottlingStatus: SEVERE
+03-28 14:31:56.167   944   958 I android.hardware.thermal@2.0-impl: sendThermalChangedCallback
+03-28 14:31:56.176  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19584, tid:1075
+03-28 14:31:56.177   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:56.193  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:56.194  1075  1075 I mtkpower_client: ret_hdl:19585
+03-28 14:31:56.203  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19585, tid:1075
+03-28 14:31:56.204   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:56.208  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:56.211  1790  1827 E ApplicationHelper: Fail to get PackageManager
+03-28 14:31:56.244  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:56.246  1075  1075 I mtkpower_client: ret_hdl:19586
+03-28 14:31:56.246  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19586, tid:1075
+03-28 14:31:56.247   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:56.294  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:56.294  1075  1075 I mtkpower_client: ret_hdl:19587
+03-28 14:31:56.294  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19587, tid:1075
+03-28 14:31:56.296   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:56.326  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:56.327  1075  1075 I mtkpower_client: ret_hdl:19588
+03-28 14:31:56.327  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19588, tid:1075
+03-28 14:31:56.329   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:56.377  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:56.377  1075  1075 I mtkpower_client: ret_hdl:19589
+03-28 14:31:56.377  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19589, tid:1075
+03-28 14:31:56.379   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:56.410  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:56.411  1075  1075 I mtkpower_client: ret_hdl:19590
+03-28 14:31:56.411  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19590, tid:1075
+03-28 14:31:56.413   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:56.431  1790  2252 I mtkpower_client: perf_lock_acq, hdl:19228, dur:1, num:2, pid:1790, tid:2252
+03-28 14:31:56.432  1790  2252 I mtkpower_client: ret_hdl:19591
+03-28 14:31:56.432   957  1061 I libPowerHal: cmdSetting - unknown cmd:1444300, scmd:(null) ,param_1:15375
+03-28 14:31:56.433 15375 20667 I PowerHalMgrImpl: hdl:19591, pid:15375 
+03-28 14:31:56.433  1790  2252 I mtkpower_client: perf_lock_rel, hdl:19591, tid:2252
+03-28 14:31:56.434   957  1061 I mtkpower@impl: [powerd_req] TIMER_MSG_PERF_LOCK_TIMEOUT hdl:19591
+03-28 14:31:56.447 15375 15375 I InsetsController: Insets animation onAnimationEnd
+03-28 14:31:56.448 15375 15375 I ImeTracker: com.handihub.global:8fb78eb8: onShown
+03-28 14:31:56.449  1790  1838 I mtkpower_client: perf_lock_rel, hdl:19576, tid:1838
+03-28 14:31:56.453   957  1061 I libPowerHal: [setClusterFreq] MTKPOWER_HINT_LAUNCHER_ANIMA: sysfs_freq set cpu freq: -1 1300000 -1 1300000 
+03-28 14:31:56.453   957  1061 I libPowerHal: [setClusterHardFreq] MTKPOWER_HINT_LAUNCHER_ANIMA: hard userlimit set cpu freq: -1 1300000 -1 1300000
+03-28 14:31:56.453   957  1061 I libPowerHal: [setClusterFreq] MTKPOWER_HINT_LAUNCHER_ANIMA: sysfs_freq set cpu freq: -1 1300000 -1 1300000 
+03-28 14:31:56.453   957  1061 I libPowerHal: [unsetGPUFreq] current min:0, max:0; scn_gpu_min:0, scn_gpu_max:-1; scn_gpu_min(HL):-1, scn_gpu_max(HL):-1
+03-28 14:31:56.453   957  1061 I libPowerHal: MTKPOWER_HINT_LAUNCHER_ANIMA: set gpu opp level: 44
+03-28 14:31:56.455   957  1061 I libPowerHal: MTKPOWER_HINT_LAUNCHER_ANIMA: set gpu opp level max: 0
+03-28 14:31:56.455   957  1061 I libPowerHal: [setGPUFreq] Soft min/max = (44, 0); Hard min/max = (44, 0)
+03-28 14:31:56.455   957  1061 I libPowerHal: [setGPUFreq] final min/max = (44, 0)
+03-28 14:31:56.455   957  1061 I libPowerHal: MTKPOWER_HINT_LAUNCHER_ANIMA: set gpu opp level: 44
+03-28 14:31:56.455   957  1061 I libPowerHal: MTKPOWER_HINT_LAUNCHER_ANIMA: set gpu opp level max: 0
+03-28 14:31:56.455   957  1061 I libPowerHal: [PD] MTKPOWER_HINT_LAUNCHER_ANIMA update cmd:1404300 param:0
+03-28 14:31:56.476  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:56.476  1006  3240 I SurfaceFlinger: setDesiredDisplayModeSpecs: calling_process=system_server
+03-28 14:31:56.476  1006  1006 I SurfaceFlinger: setDesiredDisplayModeSpecs: policy={defaultModeId=1, allowGroupSwitching=false, primaryRanges={physical=[60.00 Hz, 120.00 Hz], render=[60.00 Hz, 120.00 Hz]}, appRequestRanges={physical=[0.00 Hz, 120.00 Hz], render=[0.00 Hz, 120.00 Hz]} idleScreenConfig=nullptr}
+03-28 14:31:56.476  1006  1006 I RefreshRateSelector: Display 0 policy changed
+03-28 14:31:56.476  1006  1006 I RefreshRateSelector: Previous: {defaultModeId=0, allowGroupSwitching=false, primaryRanges={physical=[60.00 Hz, 120.00 Hz], render=[60.00 Hz, 120.00 Hz]}, appRequestRanges={physical=[0.00 Hz, 120.00 Hz], render=[0.00 Hz, 120.00 Hz]} idleScreenConfig=nullptr}
+03-28 14:31:56.476  1006  1006 I RefreshRateSelector: Current:  DisplayManagerPolicy{defaultModeId=1, allowGroupSwitching=false, primaryRanges={physical=[60.00 Hz, 120.00 Hz], render=[60.00 Hz, 120.00 Hz]}, appRequestRanges={physical=[0.00 Hz, 120.00 Hz], render=[0.00 Hz, 120.00 Hz]} idleScreenConfig=nullptr}
+03-28 14:31:56.476  1006  1006 I RefreshRateSelector: 0 mode changes were performed under the previous policy
+03-28 14:31:56.476  1075  1075 I mtkpower_client: ret_hdl:19592
+03-28 14:31:56.479  1790  1829 I DisplayDeviceRepository: Display device changed: DisplayDeviceInfo{"Built-in Screen": uniqueId="local:0", 1080 x 2436, modeId 1, renderFrameRate 120.00001, defaultModeId 1, userPreferredModeId -1, supportedModes [{id=1, width=1080, height=2436, fps=120.00001, vsync=120.00001, synthetic=false, alternativeRefreshRates=[60.0], supportedHdrTypes=[]}, {id=2, width=1080, height=2436, fps=60.0, vsync=60.0, synthetic=false, alternativeRefreshRates=[120.00001], supportedHdrTypes=[]}], colorMode 0, supportedColorModes [0, 7, 9], hdrCapabilities HdrCapabilities{mSupportedHdrTypes=[], mMaxLuminance=500.0, mMaxAverageLuminance=500.0, mMinLuminance=0.0}, allmSupported false, gameContentTypeSupported false, density 480, 394.818 x 392.828 dpi, appVsyncOff 2399998, presDeadline 11933334, cutout DisplayCutout{insets=Rect(0, 108 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(468, 0 - 612, 108), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=1080 displayHeight=2436 physicalDisplayWidth=1080 physicalDisplayHeight=2436 density={3.0} cutoutSpec={M -24,0 L -24,36 L 24,36 L 24,0 Z @dp} rotation={0} scale={1.0} physicalPixelDisplaySizeRatio={1.0}}} sideOverrides={}}, touch INTERNAL, rotation 0, type INTERNAL, address {port=0}, deviceProductInfo null, state ON, committedState ON, frameRateOverride , brightnessMinimum 0.0, brightnessMaximum 1.0, brightnessDefault 0.2, hdrSdrRatio NaN, FLAG_ALLOWED_TO_BE_DEFAULT_DISPLAY, FLAG_ROTATES_WITH_CONTENT, FLAG_SECURE, FLAG_SUPPORTS_PROTECTED_BUFFERS, FLAG_TRUSTED, installOrientation 0, displayShape DisplayShape{ spec=596679847 displayWidth=1080 displayHeight=2436 physicalPixelDisplaySizeRatio=1.0 rotation=0 offsetX=0 offsetY=0 scale=1.0}}
+03-28 14:31:56.481  1790  1829 I Griffin/DeviceState: virtualDisplayPackageName :{}
+03-28 14:31:56.487  1790  1829 I DisplayDeviceRepository: Display device changed: DisplayDeviceInfo{"Built-in Screen": uniqueId="local:0", 1080 x 2436, modeId 1, renderFrameRate 120.00001, defaultModeId 1, userPreferredModeId -1, supportedModes [{id=1, width=1080, height=2436, fps=120.00001, vsync=120.00001, synthetic=false, alternativeRefreshRates=[60.0], supportedHdrTypes=[]}, {id=2, width=1080, height=2436, fps=60.0, vsync=60.0, synthetic=false, alternativeRefreshRates=[120.00001], supportedHdrTypes=[]}], colorMode 0, supportedColorModes [0, 7, 9], hdrCapabilities HdrCapabilities{mSupportedHdrTypes=[], mMaxLuminance=500.0, mMaxAverageLuminance=500.0, mMinLuminance=0.0}, allmSupported false, gameContentTypeSupported false, density 480, 394.818 x 392.828 dpi, appVsyncOff 2399998, presDeadline 11933334, cutout DisplayCutout{insets=Rect(0, 108 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(468, 0 - 612, 108), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=1080 displayHeight=2436 physicalDisplayWidth=1080 physicalDisplayHeight=2436 density={3.0} cutoutSpec={M -24,0 L -24,36 L 24,36 L 24,0 Z @dp} rotation={0} scale={1.0} physicalPixelDisplaySizeRatio={1.0}}} sideOverrides={}}, touch INTERNAL, rotation 0, type INTERNAL, address {port=0}, deviceProductInfo null, state ON, committedState ON, frameRateOverride {uid=1000 frameRateHz=60.000004} {uid=10159 frameRateHz=120.00001} {uid=10599 frameRateHz=120.00001} , brightnessMinimum 0.0, brightnessMaximum 1.0, brightnessDefault 0.2, hdrSdrRatio NaN, FLAG_ALLOWED_TO_BE_DEFAULT_DISPLAY, FLAG_ROTATES_WITH_CONTENT, FLAG_SECURE, FLAG_SUPPORTS_PROTECTED_BUFFERS, FLAG_TRUSTED, installOrientation 0, displayShape DisplayShape{ spec=596679847 displayWidth=1080 displayHeight=2436 physicalPixelDisplaySizeRatio=1.0 rotation=0 offsetX=0 offsetY=0 scale=1.0}}
+03-28 14:31:56.489  1790  1829 I Griffin/DeviceState: virtualDisplayPackageName :{}
+03-28 14:31:56.494   995   995 I AudioFlinger: setParameters: filtered keyvalue screen_state=on
+03-28 14:31:56.494  4983  4983 I SmartPanelService: mDisplayListener onDisplayChanged
+03-28 14:31:56.495   995   995 I AudioFlinger: +mAudioHwDevs(primary)->setParameters(): screen_state=on
+03-28 14:31:56.496   995   995 I AudioFlinger: -mAudioHwDevs(primary)->setParameters(): screen_state=on
+03-28 14:31:56.496   995   995 I AudioFlinger: +mAudioHwDevs(bluetooth)->setParameters(): screen_state=on
+03-28 14:31:56.496   995   995 I AudioFlinger: -mAudioHwDevs(bluetooth)->setParameters(): screen_state=on
+03-28 14:31:56.496   995   995 I AudioFlinger: +mAudioHwDevs(usb)->setParameters(): screen_state=on
+03-28 14:31:56.497   995   995 I AudioFlinger: -mAudioHwDevs(usb)->setParameters(): screen_state=on
+03-28 14:31:56.497   995   995 I AudioFlinger: +mAudioHwDevs(r_submix)->setParameters(): screen_state=on
+03-28 14:31:56.497   995   995 I AudioFlinger: -mAudioHwDevs(r_submix)->setParameters(): screen_state=on
+03-28 14:31:56.497   995   995 E TranFlinger: setPareters is is 0
+03-28 14:31:56.506  1790  2041 I TranWifiSmartAssistantController: start current network monitor 
+03-28 14:31:56.506  1790  2041 I TranWifiSmartAssistantController: userIgnored :false isScoredCurrentNetwork :true
+03-28 14:31:56.506  1790  2041 I TranWifiSmartAssistantController: mCurrentNetwork :102 SSID :"iagrillo"
+03-28 14:31:56.507  1790  2041 I WifiNetworkQuality: :index 41 ,Too short since last network selection: 43337 ms. Skip network selection.
+03-28 14:31:56.507  1790  2041 I TranWifiSmartAssistantController: mNoCandidateCount : 41
+03-28 14:31:56.507  1790  2041 I TranWifiSmartAssistantController: ====>>rssi :-76
+03-28 14:31:56.537  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19592, tid:1075
+03-28 14:31:56.538   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:56.548  1790  2894 W VibratorManagerService: Vibration end for EndInfo{status=IGNORED_FOR_SETTINGS, endedBy=null}
+03-28 14:31:56.553  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:56.554  1075  1075 I mtkpower_client: ret_hdl:19594
+03-28 14:31:56.646   957  1061 I mtkpower@impl: [powerd_req] TIMER_MSG_PERF_LOCK_TIMEOUT hdl:19593
+03-28 14:31:56.647   957  1061 I libPowerHal: [PD] MTKPOWER_HINT_APP_TOUCH update cmd:3408b00 param:0
+03-28 14:31:56.657  4473 12726 I ScreenTouchCollector: resetTouchPara:reason= InputEvent ACTION_UP or ACTION_CANCEL
+03-28 14:31:56.708  1006  1006 I BufferQueueProducer: [InputMethod#10426](this:0xb40000765f0bb428,id:-1,api:0,p:-1,c:1006) queueBuffer: fps=14.78 dur=1014.60 max=674.61 min=7.83
+03-28 14:31:56.779  1790  1954 W VibratorManagerService: Vibration end for EndInfo{status=IGNORED_FOR_SETTINGS, endedBy=null}
+03-28 14:31:56.798  1075  1075 I mtkpower_client: perf_lock_rel, hdl:19594, tid:1075
+03-28 14:31:56.799   957  1061 I libPowerHal: [PD] fpsgo update cmd:1408300 param:0
+03-28 14:31:56.813  1075  1075 I mtkpower_client: perf_lock_acq, hdl:0, dur:30000, num:2, tid:1075
+03-28 14:31:56.814  1075  1075 I mtkpower_client: ret_hdl:19596

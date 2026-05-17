@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../ui/app_theme.dart';
 
 class UIInput extends StatelessWidget {
   final TextEditingController controller;
@@ -9,6 +10,8 @@ class UIInput extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final String? errorText;
   final bool obscureText;
+  final IconData? prefixIcon;
+  final Widget? suffixIcon;
 
   const UIInput({
     required this.controller,
@@ -19,6 +22,8 @@ class UIInput extends StatelessWidget {
     this.onChanged,
     this.errorText,
     this.obscureText = false,
+    this.prefixIcon,
+    this.suffixIcon,
     Key? key,
   }) : super(key: key);
 
@@ -28,8 +33,8 @@ class UIInput extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (label != null) ...[
-          Text(label!, style: TextStyle(fontWeight: FontWeight.bold)),
-          SizedBox(height: 4),
+          Text(label!, style: AppTheme.labelLarge),
+          const SizedBox(height: AppTheme.spaceXS),
         ],
         TextField(
           controller: controller,
@@ -37,11 +42,14 @@ class UIInput extends StatelessWidget {
           keyboardType: keyboardType,
           onChanged: onChanged,
           obscureText: obscureText,
+          style: AppTheme.bodyMedium,
           decoration: InputDecoration(
             hintText: hint,
             errorText: errorText,
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-            contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+            prefixIcon: prefixIcon != null
+                ? Icon(prefixIcon, color: AppTheme.textTertiary, size: 20)
+                : null,
+            suffixIcon: suffixIcon,
           ),
         ),
       ],

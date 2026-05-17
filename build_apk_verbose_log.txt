@@ -1,0 +1,938 @@
+Note: The tool simplified the command to `flutter build apk --release -v`, and this is the output of running that command instead:
+
+Files\PuTTY\;C:\Program Files\Git\cmd;C:\src\flutter\bin;C:\Program
+Files\nodejs\;C:\Users\user\AppData\Local\Microsoft\WindowsApps;C:\Users\user\AppData\Local\Programs\Microsoft VS
+Code\bin;C:\Users\user\AppData\Roaming\npm;C:\Users\user\AppData\Local\Pub\Cache\bin;;C:\src\flutter\bin\mingit\cmd;C:\src\flutter\bin\mingit\cmd
+PROGRAMDATA=C:\ProgramData SYSTEMDRIVE=C: SYSTEMROOT=C:\Windows
+TEMP=C:\Users\user\AppData\Local\Temp TMP=C:\Users\user\AppData\Local\Temp      
+USERPROFILE=C:\Users\user WINDIR=C:\Windows
+C:\src\flutter\bin\cache\dart-sdk\bin\dart
+--packages=C:\handiartisan\.dart_tool\package_config.json
+C:\handiartisan\.dart_tool\hooks_runner\objective_c\28099f12dd\hook.dill        
+--config=C:\handiartisan\.dart_tool\hooks_runner\objective_c\28099f12dd\input.json )`.
+[ +276 ms] [ +278 ms] output.json contents:
+[        ]            {
+[        ]              "assets_for_linking": {},
+[        ]              "status": "success",
+[        ]              "timestamp": "2026-03-28 12:30:32.000"
+[        ]            }
+[        ] [  +48 ms] Running `C:\src\flutter\bin\cache\dart-sdk\bin\dart       
+compile kernel --packages=C:\handiartisan\.dart_tool\package_config.json        
+--output=C:\handiartisan\.dart_tool\hooks_runner\objective_c\310839b266\hook.dill
+--depfile=C:\handiartisan\.dart_tool\hooks_runner\objective_c\310839b266\hook.dill.d
+C:\Users\user\AppData\Local\Pub\Cache\hosted\pub.dev\objective_c-9.3.0\hook\build.dart`.
+[+1688 ms] [+1634 ms] input.json contents:
+[        ]            {
+[        ]              "assets": {},
+[        ]              "config": {
+[        ]                "build_asset_types": [
+[        ]                  "code_assets/code"
+[        ]                ],
+[        ]                "extensions": {
+[        ]                  "code_assets": {
+[        ]                    "android": {
+[        ]                      "target_ndk_api": 24
+[        ]                    },
+[        ]                    "c_compiler": {
+[        ]                      "ar":
+"C:\\Users\\user\\AppData\\Local\\Android\\sdk\\ndk\\28.2.13676358\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\llvm-ar.exe",
+[        ]                      "cc":
+"C:\\Users\\user\\AppData\\Local\\Android\\sdk\\ndk\\28.2.13676358\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+[        ]                      "ld":
+"C:\\Users\\user\\AppData\\Local\\Android\\sdk\\ndk\\28.2.13676358\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\ld.lld.exe"
+[   +3 ms]                    },
+[        ]                    "link_mode_preference": "dynamic",
+[        ]                    "target_architecture": "arm64",
+[        ]                    "target_os": "android"
+[        ]                  }
+[        ]                },
+[        ]                "linking_enabled": true
+[        ]              },
+[        ]              "out_dir_shared":
+"C:\\handiartisan\\.dart_tool\\hooks_runner\\shared\\objective_c\\build\\",     
+[   +2 ms]              "out_file":
+"C:\\handiartisan\\.dart_tool\\hooks_runner\\objective_c\\310839b266\\output.json",
+[        ]              "package_name": "objective_c",
+[        ]              "package_root":
+"C:\\Users\\user\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\objective_c-9.3.0\\",
+[        ]              "user_defines": {}
+[        ]            }
+[        ] [   +3 ms] Running `(cd
+C:\Users\user\AppData\Local\Pub\Cache\hosted\pub.dev\objective_c-9.3.0\;        
+PATH=C:\Program Files\Android\Android
+Studio\jbr\bin;C:\src\flutter\bin\;c:\Users\user\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\user\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Users\user\AppData\Local\Programs\Microsoft VS Code;C:\Program Files\Common
+Files\Oracle\Java\javapath;C:\Program Files (x86)\Common
+Files\Oracle\Java\java8path;C:\Program Files (x86)\Common
+Files\Oracle\Java\javapath;C:\Python314\Scripts\;C:\Python314\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program        
+Files\PuTTY\;C:\Program Files\Git\cmd;C:\src\flutter\bin;C:\Program
+Files\nodejs\;C:\Program
+Files\Java\jdk-11.0.30\bin;C:\Users\user\platform-tools;C:\Users\user\gradle-9.3.1\bin;c:\Users\user\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\user\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Python314\Scripts\;C:\Python314\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program
+Files\PuTTY\;C:\Program Files\Git\cmd;C:\src\flutter\bin;C:\Program
+Files\nodejs\;C:\Users\user\AppData\Local\Microsoft\WindowsApps;C:\Users\user\AppData\Local\Programs\Microsoft VS
+Code\bin;C:\Users\user\AppData\Roaming\npm;C:\Users\user\AppData\Local\Pub\Cache\bin;;C:\src\flutter\bin\mingit\cmd;C:\src\flutter\bin\mingit\cmd
+PROGRAMDATA=C:\ProgramData SYSTEMDRIVE=C: SYSTEMROOT=C:\Windows
+TEMP=C:\Users\user\AppData\Local\Temp TMP=C:\Users\user\AppData\Local\Temp      
+USERPROFILE=C:\Users\user WINDIR=C:\Windows
+C:\src\flutter\bin\cache\dart-sdk\bin\dart
+--packages=C:\handiartisan\.dart_tool\package_config.json
+C:\handiartisan\.dart_tool\hooks_runner\objective_c\310839b266\hook.dill        
+--config=C:\handiartisan\.dart_tool\hooks_runner\objective_c\310839b266\input.json )`.
+[ +192 ms] [ +277 ms] output.json contents:
+[        ]            {
+[   +1 ms]              "assets_for_linking": {},
+[        ]              "status": "success",
+[        ]              "timestamp": "2026-03-28 12:30:34.000"
+[        ]            }
+[        ] [  +11 ms] Running `C:\src\flutter\bin\cache\dart-sdk\bin\dart       
+compile kernel --packages=C:\handiartisan\.dart_tool\package_config.json        
+--output=C:\handiartisan\.dart_tool\hooks_runner\objective_c\b7130201d7\hook.dill
+--depfile=C:\handiartisan\.dart_tool\hooks_runner\objective_c\b7130201d7\hook.dill.d
+C:\Users\user\AppData\Local\Pub\Cache\hosted\pub.dev\objective_c-9.3.0\hook\build.dart`.
+[+1504 ms] [+1482 ms] input.json contents:
+[        ]            {
+[        ]              "assets": {},
+[        ]              "config": {
+[        ]                "build_asset_types": [
+[        ]                  "code_assets/code"
+[        ]                ],
+[        ]                "extensions": {
+[        ]                  "code_assets": {
+[        ]                    "android": {
+[        ]                      "target_ndk_api": 24
+[        ]                    },
+[        ]                    "c_compiler": {
+[   +1 ms]                      "ar":
+"C:\\Users\\user\\AppData\\Local\\Android\\sdk\\ndk\\28.2.13676358\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\llvm-ar.exe",
+[        ]                      "cc":
+"C:\\Users\\user\\AppData\\Local\\Android\\sdk\\ndk\\28.2.13676358\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+[        ]                      "ld":
+"C:\\Users\\user\\AppData\\Local\\Android\\sdk\\ndk\\28.2.13676358\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\ld.lld.exe"
+[        ]                    },
+[        ]                    "link_mode_preference": "dynamic",
+[        ]                    "target_architecture": "x64",
+[        ]                    "target_os": "android"
+[        ]                  }
+[        ]                },
+[        ]                "linking_enabled": true
+[        ]              },
+[        ]              "out_dir_shared":
+"C:\\handiartisan\\.dart_tool\\hooks_runner\\shared\\objective_c\\build\\",     
+[        ]              "out_file":
+"C:\\handiartisan\\.dart_tool\\hooks_runner\\objective_c\\b7130201d7\\output.json",
+[        ]              "package_name": "objective_c",
+[        ]              "package_root":
+"C:\\Users\\user\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dev\\objective_c-9.3.0\\",
+[        ]              "user_defines": {}
+[        ]            }
+[        ] [   +3 ms] Running `(cd
+C:\Users\user\AppData\Local\Pub\Cache\hosted\pub.dev\objective_c-9.3.0\;        
+PATH=C:\Program Files\Android\Android
+Studio\jbr\bin;C:\src\flutter\bin\;c:\Users\user\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\user\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Users\user\AppData\Local\Programs\Microsoft VS Code;C:\Program Files\Common
+Files\Oracle\Java\javapath;C:\Program Files (x86)\Common
+Files\Oracle\Java\java8path;C:\Program Files (x86)\Common
+Files\Oracle\Java\javapath;C:\Python314\Scripts\;C:\Python314\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program        
+Files\PuTTY\;C:\Program Files\Git\cmd;C:\src\flutter\bin;C:\Program
+Files\nodejs\;C:\Program
+Files\Java\jdk-11.0.30\bin;C:\Users\user\platform-tools;C:\Users\user\gradle-9.3.1\bin;c:\Users\user\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\user\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Python314\Scripts\;C:\Python314\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program
+Files\PuTTY\;C:\Program Files\Git\cmd;C:\src\flutter\bin;C:\Program
+Files\nodejs\;C:\Users\user\AppData\Local\Microsoft\WindowsApps;C:\Users\user\AppData\Local\Programs\Microsoft VS
+Code\bin;C:\Users\user\AppData\Roaming\npm;C:\Users\user\AppData\Local\Pub\Cache\bin;;C:\src\flutter\bin\mingit\cmd;C:\src\flutter\bin\mingit\cmd
+PROGRAMDATA=C:\ProgramData SYSTEMDRIVE=C: SYSTEMROOT=C:\Windows
+TEMP=C:\Users\user\AppData\Local\Temp TMP=C:\Users\user\AppData\Local\Temp      
+USERPROFILE=C:\Users\user WINDIR=C:\Windows
+C:\src\flutter\bin\cache\dart-sdk\bin\dart
+--packages=C:\handiartisan\.dart_tool\package_config.json
+C:\handiartisan\.dart_tool\hooks_runner\objective_c\b7130201d7\hook.dill        
+--config=C:\handiartisan\.dart_tool\hooks_runner\objective_c\b7130201d7\input.json )`.
+[ +371 ms] [ +364 ms] output.json contents:
+[   +1 ms]            {
+[        ]              "assets_for_linking": {},
+[        ]              "status": "success",
+[        ]              "timestamp": "2026-03-28 12:30:36.000"
+[        ]            }
+[   +3 ms] [   +2 ms] Building native assets for android_arm, android_arm64,    
+android_x64 done.
+[        ] [   +3 ms] dart_build: Complete
+[        ] [  +17 ms] install_code_assets: Starting due to {}
+[        ] [   +4 ms] Writing native assets json to
+file:///C:/handiartisan/.dart_tool/flutter_build/654bf4762e2165453dbe247c25fe0649/native_assets.json.
+[        ] [   +3 ms] Writing
+C:\handiartisan\.dart_tool\flutter_build\654bf4762e2165453dbe247c25fe0649\native_assets.json done.
+[        ] [   +1 ms] install_code_assets: Complete
+[+17201 ms] [+17188 ms] kernel_snapshot_program: Complete
+[+1298 ms] [+1274 ms] android_aot_release_android-arm: Starting due to {}
+[        ] [   +5 ms] targetingApplePlatform = false
+[   +1 ms] [        ] extractAppleDebugSymbols = true
+[        ] [        ] Will strip AOT snapshot during build.
+[        ] [   +2 ms] executing:
+C:\src\flutter\bin\cache\artifacts\engine\android-arm-release\windows-x64\gen_snapshot --deterministic --snapshot_kind=app-aot-elf
+--elf=C:\handiartisan\.dart_tool\flutter_build\654bf4762e2165453dbe247c25fe0649\armeabi-v7a\app.so --strip --no-sim-use-hardfp --no-use-integer-division        
+C:\handiartisan\.dart_tool\flutter_build\654bf4762e2165453dbe247c25fe0649\app.dill
+[        ] [        ] aot_android_asset_bundle: Starting due to {}
+[        ] [   +1 ms] android_aot_release_android-arm64: Starting due to {}     
+[        ] [        ] targetingApplePlatform = false
+[        ] [        ] extractAppleDebugSymbols = true
+[        ] [        ] Will strip AOT snapshot during build.
+[        ] [        ] executing:
+C:\src\flutter\bin\cache\artifacts\engine\android-arm64-release\windows-x64\gen_snapshot --deterministic --snapshot_kind=app-aot-elf
+--elf=C:\handiartisan\.dart_tool\flutter_build\654bf4762e2165453dbe247c25fe0649\arm64-v8a\app.so --strip
+C:\handiartisan\.dart_tool\flutter_build\654bf4762e2165453dbe247c25fe0649\app.dill
+[   +3 ms] [   +3 ms] android_aot_release_android-x64: Starting due to {}       
+[        ] [   +4 ms] targetingApplePlatform = false
+[        ] [        ] extractAppleDebugSymbols = true
+[        ] [        ] Will strip AOT snapshot during build.
+[        ] [        ] executing:
+C:\src\flutter\bin\cache\artifacts\engine\android-x64-release\windows-x64\gen_snapshot --deterministic --snapshot_kind=app-aot-elf
+--elf=C:\handiartisan\.dart_tool\flutter_build\654bf4762e2165453dbe247c25fe0649\x86_64\app.so --strip
+C:\handiartisan\.dart_tool\flutter_build\654bf4762e2165453dbe247c25fe0649\app.dill
+[ +305 ms] [ +256 ms] shaderc command:
+[C:\src\flutter\bin\cache\artifacts\engine\windows-x64\impellerc.exe, --sksl,   
+--runtime-stage-gles, --runtime-stage-gles3, --runtime-stage-vulkan, --iplr,    
+--sl=C:\handiartisan\android\app\build\intermediates\flutter\release\flutter_assets\shaders/ink_sparkle.frag,
+--spirv=C:\handiartisan\android\app\build\intermediates\flutter\release\flutter_assets\shaders/ink_sparkle.frag.spirv,
+--input=C:\src\flutter\packages\flutter\lib\src\material\shaders\ink_sparkle.frag, --input-type=frag,
+--include=C:\src\flutter\packages\flutter\lib\src\material\shaders,
+--include=C:\src\flutter\bin\cache\artifacts\engine\windows-x64\shader_lib]     
+[  +10 ms] [  +44 ms] shaderc command:
+[C:\src\flutter\bin\cache\artifacts\engine\windows-x64\impellerc.exe, --sksl,   
+--runtime-stage-gles, --runtime-stage-gles3, --runtime-stage-vulkan, --iplr,    
+--sl=C:\handiartisan\android\app\build\intermediates\flutter\release\flutter_assets\shaders/stretch_effect.frag,
+--spirv=C:\handiartisan\android\app\build\intermediates\flutter\release\flutter_assets\shaders/stretch_effect.frag.spirv,
+--input=C:\src\flutter\packages\flutter\lib\src\material\shaders\stretch_effect.frag, --input-type=frag,
+--include=C:\src\flutter\packages\flutter\lib\src\material\shaders,
+--include=C:\src\flutter\bin\cache\artifacts\engine\windows-x64\shader_lib]     
+[ +393 ms] [ +447 ms] Running command:
+C:\src\flutter\bin\cache\dart-sdk\bin\dart.exe
+C:\src\flutter\bin\cache\artifacts\engine\windows-x64\const_finder.dart.snapshot--kernel-file
+C:\handiartisan\.dart_tool\flutter_build\654bf4762e2165453dbe247c25fe0649\app.dill --class-library-uri package:flutter/src/widgets/icon_data.dart --class-name  
+IconData --annotation-class-name _StaticIconProvider
+--annotation-class-library-uri package:flutter/src/widgets/icon_data.dart       
+[+2283 ms] [+2220 ms] Expected to find fontFamily for constant IconData with
+codepoint: 128842, but found fontFamily: null. This usually means you are       
+relying on the system font. Alternatively, font families in an IconData class   
+can be provided in the assets section of your pubspec.yaml, or you are missing  
+"uses-material-design: true".
+[  +25 ms] [   +1 ms] Running font-subset:
+C:\src\flutter\bin\cache\artifacts\engine\windows-x64\font-subset.exe
+C:\handiartisan\android\app\build\intermediates\flutter\release\flutter_assets\fonts/MaterialIcons-Regular.otf
+C:\src\flutter\bin\cache\artifacts\material_fonts\MaterialIcons-Regular.otf,    
+using codepoints 57490 62832 57706 58332 57502 57501 57657 57496 57704 58372    
+58644 58513 58530 57898 57672 58286 58289 59069 59070 57648 58173 58283 57683   
+58336 58497 57689 58392 58704 58873 57785 57484 57442 58774 58502 58890 57622   
+57409 57882 59122 57911 57416 58554 58278 58098 57500 58874 58291 57638 58737   
+57809 57627 57941 57402 57415 58778 58631 59033 59083 58500 58892 57420 58162   
+57737 59124 58637 57686 58518 58659 58360 58149 58710 58186 58648 57424 57634   
+61464 62075 62096 61843 57527 57984 61190 58164 58290 57495 58501 59084 57504   
+57912
+[   +6 ms] [  +69 ms] Font asset "MaterialIcons-Regular.otf" was tree-shaken,
+reducing it from 1645184 to 10108 bytes (99.4% reduction). Tree-shaking can be  
+disabled by providing the --no-tree-shake-icons flag when building your app.    
+[ +144 ms] [   +3 ms] aot_android_asset_bundle: Complete
+[+17713 ms] [+17841 ms] android_aot_release_android-x64: Complete
+[ +292 ms] [ +294 ms] android_aot_bundle_release_android-x64: Starting due to {}[        ] [   +6 ms] android_aot_bundle_release_android-x64: Complete
+[ +111 ms] [  +99 ms] android_aot_release_android-arm64: Complete
+[ +389 ms] [ +267 ms] android_aot_bundle_release_android-arm64: Starting due to
+{}
+[  +20 ms] [   +7 ms] android_aot_bundle_release_android-arm64: Complete
+[  +81 ms] [ +250 ms] android_aot_release_android-arm: Complete
+[ +300 ms] [ +318 ms] android_aot_bundle_release_android-arm: Starting due to {}[ +113 ms] [   +6 ms] android_aot_bundle_release_android-arm: Complete
+[  +88 ms] [ +119 ms] _composite: Starting due to {}
+[        ] [        ] _composite: Complete
+[        ] [   +1 ms] Persisting file store
+[        ] [  +21 ms] Done persisting file store
+[        ] [  +52 ms] build succeeded.
+[  +95 ms] [  +13 ms] "flutter assemble" took 48,869ms.
+[ +104 ms] [  +95 ms] Running 1 shutdown hook
+[        ] [        ] Shutdown hooks complete
+[ +207 ms] [ +264 ms] exiting with code 0
+[  +88 ms] Resolve mutations for :app:packJniLibsflutterBuildRelease
+(Thread[#484,Execution worker Thread 3,5,main]) started.
+[   +1 ms] :app:packJniLibsflutterBuildRelease (Thread[#484,Execution worker
+Thread 3,5,main]) started.
+[        ] > Task :app:packJniLibsflutterBuildRelease UP-TO-DATE
+[        ] Caching disabled for task ':app:packJniLibsflutterBuildRelease'      
+because:
+[        ]   Build cache is disabled
+[        ]   Not worth caching
+[        ] Skipping task ':app:packJniLibsflutterBuildRelease' as it is
+up-to-date.
+[   +2 ms] Resolve mutations for :app:preBuild (Thread[#484,Execution worker    
+Thread 3,5,main]) started.
+[   +9 ms] :app:preBuild (Thread[#482,Execution worker,5,main]) started.
+[   +5 ms] > Task :app:preBuild UP-TO-DATE
+[        ] Skipping task ':app:preBuild' as it has no actions.
+[        ] Resolve mutations for :app:preReleaseBuild (Thread[#482,Execution
+worker,5,main]) started.
+[  +17 ms] :app:preReleaseBuild (Thread[#483,Execution worker Thread 2,5,main]) 
+started.
+[  +15 ms] > Task :app:preReleaseBuild UP-TO-DATE
+[        ] Skipping task ':app:preReleaseBuild' as it has no actions.
+[   +2 ms] Resolve mutations for :app:configureCMakeRelease[arm64-v8a]
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:configureCMakeRelease[arm64-v8a] (Thread[#483,Execution worker  
+Thread 2,5,main]) started.
+[  +46 ms] > Task :app:configureCMakeRelease[arm64-v8a]
+[   +3 ms] Caching disabled for task ':app:configureCMakeRelease[arm64-v8a]'
+because:
+[   +7 ms]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Task ':app:configureCMakeRelease[arm64-v8a]' is not up-to-date       
+because:
+[        ]   Task.upToDateWhen is false.
+[   +4 ms] C/C++:
+C:\src\flutter\packages\flutter_tools\gradle\src\main\scripts\CMakeLists.txt    
+release|arm64-v8a : Start JSON generation. Platform version: 24 min SDK version:arm64-v8a
+[   +7 ms] C/C++:
+C:\src\flutter\packages\flutter_tools\gradle\src\main\scripts\CMakeLists.txt    
+release|arm64-v8a : JSON
+'C:\handiartisan\android\app\.cxx\release\w3p6l1l6\arm64-v8a\android_gradle_build.json' was up-to-date
+[  +11 ms] C/C++:
+C:\src\flutter\packages\flutter_tools\gradle\src\main\scripts\CMakeLists.txt    
+release|arm64-v8a : JSON generation completed without problems
+[  +21 ms] C/C++:
+C:\src\flutter\packages\flutter_tools\gradle\src\main\scripts\CMakeLists.txt    
+release|arm64-v8a : Writing build model to
+C:\handiartisan\android\app\build\intermediates\cxx\release\w3p6l1l6\logs\arm64-v8a\build_model.json
+[   +8 ms] Resolve mutations for :app:buildCMakeRelease[arm64-v8a]
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:buildCMakeRelease[arm64-v8a] (Thread[#483,Execution worker      
+Thread 2,5,main]) started.
+[   +1 ms] > Task :app:buildCMakeRelease[arm64-v8a]
+[   +1 ms] Caching disabled for task ':app:buildCMakeRelease[arm64-v8a]'        
+because:
+[   +7 ms]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[   +4 ms] Task ':app:buildCMakeRelease[arm64-v8a]' is not up-to-date because:  
+[        ]   Task.upToDateWhen is false.
+[        ] C/C++: starting build
+[   +1 ms] C/C++: reading expected JSONs
+[        ] C/C++: done reading expected JSONs
+[        ] C/C++: executing build commands for targets that produce .so files orexecutables
+[        ] C/C++: evaluate miniconfig
+[   +4 ms] C/C++: no libraries
+[   +1 ms] Resolve mutations for :app:configureCMakeRelease[armeabi-v7a]        
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[   +1 ms] :app:configureCMakeRelease[armeabi-v7a] (Thread[#483,Execution workerThread 2,5,main]) started.
+[   +1 ms] > Task :app:configureCMakeRelease[armeabi-v7a]
+[        ] Caching disabled for task ':app:configureCMakeRelease[armeabi-v7a]'  
+because:
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Task ':app:configureCMakeRelease[armeabi-v7a]' is not up-to-date     
+because:
+[   +2 ms]   Task.upToDateWhen is false.
+[   +2 ms] C/C++:
+C:\src\flutter\packages\flutter_tools\gradle\src\main\scripts\CMakeLists.txt    
+release|armeabi-v7a : Start JSON generation. Platform version: 24 min SDK       
+version: armeabi-v7a
+[   +1 ms] C/C++:
+C:\src\flutter\packages\flutter_tools\gradle\src\main\scripts\CMakeLists.txt    
+release|armeabi-v7a : JSON
+'C:\handiartisan\android\app\.cxx\release\w3p6l1l6\armeabi-v7a\android_gradle_build.json' was up-to-date
+[   +7 ms] C/C++:
+C:\src\flutter\packages\flutter_tools\gradle\src\main\scripts\CMakeLists.txt    
+release|armeabi-v7a : JSON generation completed without problems
+[        ] C/C++:
+C:\src\flutter\packages\flutter_tools\gradle\src\main\scripts\CMakeLists.txt    
+release|armeabi-v7a : Writing build model to
+C:\handiartisan\android\app\build\intermediates\cxx\release\w3p6l1l6\logs\armeabi-v7a\build_model.json
+[        ] Resolve mutations for :app:buildCMakeRelease[armeabi-v7a]
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:buildCMakeRelease[armeabi-v7a] (Thread[#483,Execution worker    
+Thread 2,5,main]) started.
+[        ] > Task :app:buildCMakeRelease[armeabi-v7a]
+[   +4 ms] Caching disabled for task ':app:buildCMakeRelease[armeabi-v7a]'
+because:
+[   +1 ms]   Build cache is disabled
+[   +6 ms]   Caching has been disabled for the task
+[   +1 ms] Task ':app:buildCMakeRelease[armeabi-v7a]' is not up-to-date because:[   +2 ms]   Task.upToDateWhen is false.
+[   +5 ms] C/C++: starting build
+[   +5 ms] C/C++: reading expected JSONs
+[        ] C/C++: done reading expected JSONs
+[   +1 ms] C/C++: executing build commands for targets that produce .so files orexecutables
+[   +5 ms] C/C++: evaluate miniconfig
+[   +3 ms] C/C++: no libraries
+[   +3 ms] Resolve mutations for :app:configureCMakeRelease[x86_64]
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:configureCMakeRelease[x86_64] (Thread[#483,Execution worker     
+Thread 2,5,main]) started.
+[        ] > Task :app:configureCMakeRelease[x86_64]
+[        ] Caching disabled for task ':app:configureCMakeRelease[x86_64]'       
+because:
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Task ':app:configureCMakeRelease[x86_64]' is not up-to-date because: 
+[        ]   Task.upToDateWhen is false.
+[        ] C/C++:
+C:\src\flutter\packages\flutter_tools\gradle\src\main\scripts\CMakeLists.txt    
+release|x86_64 : Start JSON generation. Platform version: 24 min SDK version:   
+x86_64
+[        ] C/C++:
+C:\src\flutter\packages\flutter_tools\gradle\src\main\scripts\CMakeLists.txt    
+release|x86_64 : JSON
+'C:\handiartisan\android\app\.cxx\release\w3p6l1l6\x86_64\android_gradle_build.json' was up-to-date
+[        ] C/C++:
+C:\src\flutter\packages\flutter_tools\gradle\src\main\scripts\CMakeLists.txt    
+release|x86_64 : JSON generation completed without problems
+[        ] C/C++:
+C:\src\flutter\packages\flutter_tools\gradle\src\main\scripts\CMakeLists.txt    
+release|x86_64 : Writing build model to
+C:\handiartisan\android\app\build\intermediates\cxx\release\w3p6l1l6\logs\x86_64\build_model.json
+[        ] Resolve mutations for :app:buildCMakeRelease[x86_64]
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:buildCMakeRelease[x86_64] (Thread[#483,Execution worker Thread  
+2,5,main]) started.
+[        ] > Task :app:buildCMakeRelease[x86_64]
+[        ] Caching disabled for task ':app:buildCMakeRelease[x86_64]' because:  
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Task ':app:buildCMakeRelease[x86_64]' is not up-to-date because:     
+[        ]   Task.upToDateWhen is false.
+[        ] C/C++: starting build
+[        ] C/C++: reading expected JSONs
+[        ] C/C++: done reading expected JSONs
+[        ] C/C++: executing build commands for targets that produce .so files orexecutables
+[        ] C/C++: evaluate miniconfig
+[        ] C/C++: no libraries
+[        ] Resolve mutations for :app:mergeReleaseJniLibFolders
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:mergeReleaseJniLibFolders (Thread[#483,Execution worker Thread  
+2,5,main]) started.
+[        ] > Task :app:mergeReleaseJniLibFolders UP-TO-DATE
+[        ] Caching disabled for task ':app:mergeReleaseJniLibFolders' because:  
+[        ]   Build cache is disabled
+[        ]   Simple merging task
+[        ] Skipping task ':app:mergeReleaseJniLibFolders' as it is up-to-date.  
+[        ] Resolve mutations for :app:mergeReleaseNativeLibs
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:mergeReleaseNativeLibs (Thread[#483,Execution worker Thread     
+2,5,main]) started.
+[        ] > Task :app:mergeReleaseNativeLibs UP-TO-DATE
+[        ] Caching disabled for task ':app:mergeReleaseNativeLibs' because:     
+[   +3 ms]   Build cache is disabled
+[   +1 ms]   Caching has been disabled for the task
+[   +1 ms] Skipping task ':app:mergeReleaseNativeLibs' as it is up-to-date.     
+[        ] Resolve mutations for :app:stripReleaseDebugSymbols
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:stripReleaseDebugSymbols (Thread[#483,Execution worker Thread   
+2,5,main]) started.
+[        ] > Task :app:stripReleaseDebugSymbols UP-TO-DATE
+[        ] Caching disabled for task ':app:stripReleaseDebugSymbols' because:   
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:stripReleaseDebugSymbols' as it is up-to-date.   
+[        ] Resolve mutations for :app:extractReleaseNativeSymbolTables
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:extractReleaseNativeSymbolTables (Thread[#483,Execution worker
+Thread 2,5,main]) started.
+[        ] > Task :app:extractReleaseNativeSymbolTables UP-TO-DATE
+[        ] Caching disabled for task ':app:extractReleaseNativeSymbolTables'    
+because:
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:extractReleaseNativeSymbolTables' as it is       
+up-to-date.
+[        ] Resolve mutations for :app:mergeReleaseNativeDebugMetadata
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:mergeReleaseNativeDebugMetadata (Thread[#483,Execution worker   
+Thread 2,5,main]) started.
+[        ] > Task :app:mergeReleaseNativeDebugMetadata UP-TO-DATE
+[        ] Caching disabled for task ':app:mergeReleaseNativeDebugMetadata'     
+because:
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:mergeReleaseNativeDebugMetadata' as it is        
+up-to-date.
+[        ] Resolve mutations for :app:buildKotlinToolingMetadata
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:buildKotlinToolingMetadata (Thread[#483,Execution worker Thread 
+2,5,main]) started.
+[        ] > Task :app:buildKotlinToolingMetadata UP-TO-DATE
+[        ] Caching disabled for task ':app:buildKotlinToolingMetadata' because: 
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:buildKotlinToolingMetadata' as it is up-to-date. 
+[        ] Resolve mutations for :app:checkKotlinGradlePluginConfigurationErrors(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:checkKotlinGradlePluginConfigurationErrors
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] > Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED       
+[        ] Skipping task ':app:checkKotlinGradlePluginConfigurationErrors' as   
+task onlyIf 'errorDiagnostics are present' is false.
+[   +1 ms] Resolve mutations for :app:generateReleaseBuildConfig
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[   +1 ms] :app:generateReleaseBuildConfig (Thread[#483,Execution worker Thread 
+2,5,main]) started.
+[        ] > Task :app:generateReleaseBuildConfig UP-TO-DATE
+[        ] Caching disabled for task ':app:generateReleaseBuildConfig' because: 
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:generateReleaseBuildConfig' as it is up-to-date. 
+[        ] Resolve mutations for :app:checkReleaseAarMetadata
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:checkReleaseAarMetadata (Thread[#483,Execution worker Thread    
+2,5,main]) started.
+[        ] > Task :app:checkReleaseAarMetadata UP-TO-DATE
+[        ] Caching disabled for task ':app:checkReleaseAarMetadata' because:    
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:checkReleaseAarMetadata' as it is up-to-date.    
+[        ] Resolve mutations for :app:cleanMergeReleaseAssets
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:cleanMergeReleaseAssets (Thread[#483,Execution worker Thread    
+2,5,main]) started.
+[        ] > Task :app:cleanMergeReleaseAssets
+[        ] Caching disabled for task ':app:cleanMergeReleaseAssets' because:    
+[        ]   Build cache is disabled
+[        ] Task ':app:cleanMergeReleaseAssets' is not up-to-date because:
+[        ]   Task has not declared any outputs despite executing actions.       
+[        ] Resolve mutations for :app:mergeReleaseShaders (Thread[#483,Executionworker Thread 2,5,main]) started.
+[        ] :app:mergeReleaseShaders (Thread[#481,included builds,5,main])       
+started.
+[        ] > Task :app:mergeReleaseShaders UP-TO-DATE
+[        ] Caching disabled for task ':app:mergeReleaseShaders' because:        
+[        ]   Build cache is disabled
+[        ]   Simple merging task
+[        ] Skipping task ':app:mergeReleaseShaders' as it is up-to-date.        
+[        ] Resolve mutations for :app:compileReleaseShaders
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:compileReleaseShaders (Thread[#481,included builds,5,main])     
+started.
+[        ] > Task :app:compileReleaseShaders NO-SOURCE
+[        ] Skipping task ':app:compileReleaseShaders' as it has no source files 
+and no previous output files.
+[        ] Resolve mutations for :app:generateReleaseAssets
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:generateReleaseAssets (Thread[#481,included builds,5,main])     
+started.
+[        ] > Task :app:generateReleaseAssets UP-TO-DATE
+[        ] Skipping task ':app:generateReleaseAssets' as it has no actions.     
+[        ] Resolve mutations for :app:mergeReleaseAssets (Thread[#481,included  
+builds,5,main]) started.
+[        ] :app:mergeReleaseAssets (Thread[#481,included builds,5,main])        
+started.
+[        ] > Task :app:mergeReleaseAssets
+[        ] Caching disabled for task ':app:mergeReleaseAssets' because:
+[        ]   Build cache is disabled
+[        ]   Simple merging task
+[        ] Task ':app:mergeReleaseAssets' is not up-to-date because:
+[        ]   Output property 'outputDir' file
+C:\handiartisan\android\app\build\intermediates\assets\release\mergeReleaseAssets has been removed.
+[   +3 ms] The input changes require a full rebuild for incremental task        
+':app:mergeReleaseAssets'.
+[        ] Resolve mutations for :app:copyFlutterAssetsRelease
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:copyFlutterAssetsRelease (Thread[#481,included builds,5,main])  
+started.
+[  +83 ms] > Task :app:copyFlutterAssetsRelease
+[   +2 ms] Caching disabled for task ':app:copyFlutterAssetsRelease' because:
+[        ]   Build cache is disabled
+[        ]   Not worth caching
+[        ] Task ':app:copyFlutterAssetsRelease' is not up-to-date because:      
+[        ]   Output property 'destinationDir' file
+C:\handiartisan\android\app\build\intermediates\assets\release\mergeReleaseAssets\flutter_assets has been removed.
+[        ]   Output property 'destinationDir' file
+C:\handiartisan\android\app\build\intermediates\assets\release\mergeReleaseAssets\flutter_assets\AssetManifest.bin has been removed.
+[   +1 ms]   Output property 'destinationDir' file
+C:\handiartisan\android\app\build\intermediates\assets\release\mergeReleaseAssets\flutter_assets\FontManifest.json has been removed.
+[        ]   and more...
+[        ] Resolve mutations for :app:generateReleaseResValues
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:generateReleaseResValues (Thread[#483,Execution worker Thread   
+2,5,main]) started.
+[        ] > Task :app:generateReleaseResValues UP-TO-DATE
+[        ] Caching disabled for task ':app:generateReleaseResValues' because:   
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:generateReleaseResValues' as it is up-to-date.   
+[        ] Resolve mutations for :app:mapReleaseSourceSetPaths
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:mapReleaseSourceSetPaths (Thread[#483,Execution worker Thread   
+2,5,main]) started.
+[   +1 ms] > Task :app:mapReleaseSourceSetPaths UP-TO-DATE
+[        ] Caching disabled for task ':app:mapReleaseSourceSetPaths' because:   
+[   +6 ms]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:mapReleaseSourceSetPaths' as it is up-to-date.   
+[        ] Resolve mutations for :app:generateReleaseResources
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:generateReleaseResources (Thread[#483,Execution worker Thread   
+2,5,main]) started.
+[        ] > Task :app:generateReleaseResources UP-TO-DATE
+[   +1 ms] Caching disabled for task ':app:generateReleaseResources' because:   
+[   +1 ms]   Build cache is disabled
+[        ] Skipping task ':app:generateReleaseResources' as it is up-to-date.   
+[        ] Resolve mutations for :app:mergeReleaseResources
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:mergeReleaseResources (Thread[#483,Execution worker Thread      
+2,5,main]) started.
+[        ] > Task :app:mergeReleaseResources UP-TO-DATE
+[        ] Caching disabled for task ':app:mergeReleaseResources' because:      
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:mergeReleaseResources' as it is up-to-date.      
+[        ] Resolve mutations for :app:packageReleaseResources
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[   +4 ms] :app:packageReleaseResources (Thread[#483,Execution worker Thread
+2,5,main]) started.
+[        ] > Task :app:packageReleaseResources UP-TO-DATE
+[        ] Caching disabled for task ':app:packageReleaseResources' because:    
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:packageReleaseResources' as it is up-to-date.    
+[        ] Resolve mutations for :app:parseReleaseLocalResources
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:parseReleaseLocalResources (Thread[#483,Execution worker Thread 
+2,5,main]) started.
+[        ] > Task :app:parseReleaseLocalResources UP-TO-DATE
+[        ] Caching disabled for task ':app:parseReleaseLocalResources' because: 
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:parseReleaseLocalResources' as it is up-to-date. 
+[        ] Resolve mutations for :app:createReleaseCompatibleScreenManifests    
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:createReleaseCompatibleScreenManifests (Thread[#483,Execution   
+worker Thread 2,5,main]) started.
+[        ] > Task :app:createReleaseCompatibleScreenManifests UP-TO-DATE        
+[        ] Caching disabled for task
+':app:createReleaseCompatibleScreenManifests' because:
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:createReleaseCompatibleScreenManifests' as it is 
+up-to-date.
+[   +1 ms] Resolve mutations for :app:extractDeepLinksRelease
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[   +5 ms] :app:extractDeepLinksRelease (Thread[#483,Execution worker Thread
+2,5,main]) started.
+[        ] > Task :app:extractDeepLinksRelease UP-TO-DATE
+[   +1 ms] Caching disabled for task ':app:extractDeepLinksRelease' because:
+[  +15 ms]   Build cache is disabled
+[   +1 ms] Skipping task ':app:extractDeepLinksRelease' as it is up-to-date.    
+[        ] Resolve mutations for :app:processReleaseMainManifest
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[   +1 ms] :app:processReleaseMainManifest (Thread[#483,Execution worker Thread 
+2,5,main]) started.
+[   +1 ms] > Task :app:processReleaseMainManifest UP-TO-DATE
+[   +1 ms] Caching disabled for task ':app:processReleaseMainManifest' because: 
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:processReleaseMainManifest' as it is up-to-date. 
+[        ] Resolve mutations for :app:outputReleaseAppLinkSettings
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:outputReleaseAppLinkSettings (Thread[#483,Execution worker      
+Thread 2,5,main]) started.
+[        ] > Task :app:outputReleaseAppLinkSettings UP-TO-DATE
+[        ] Caching disabled for task ':app:outputReleaseAppLinkSettings'        
+because:
+[        ]   Build cache is disabled
+[        ]   Caching has not been enabled for the task
+[        ] Skipping task ':app:outputReleaseAppLinkSettings' as it is
+up-to-date.
+[        ] Resolve mutations for :app:processReleaseManifest
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:processReleaseManifest (Thread[#483,Execution worker Thread     
+2,5,main]) started.
+[        ] > Task :app:processReleaseManifest UP-TO-DATE
+[        ] Caching disabled for task ':app:processReleaseManifest' because:     
+[   +3 ms]   Build cache is disabled
+[        ] Skipping task ':app:processReleaseManifest' as it is up-to-date.     
+[        ] Resolve mutations for :app:processReleaseManifestForPackage
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:processReleaseManifestForPackage (Thread[#483,Execution worker  
+Thread 2,5,main]) started.
+[        ] > Task :app:processReleaseManifestForPackage UP-TO-DATE
+[        ] Custom actions are attached to task
+':app:processReleaseManifestForPackage'.
+[        ] Caching disabled for task ':app:processReleaseManifestForPackage'    
+because:
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:processReleaseManifestForPackage' as it is       
+up-to-date.
+[        ] Resolve mutations for :app:processReleaseResources
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:processReleaseResources (Thread[#483,Execution worker Thread    
+2,5,main]) started.
+[        ] > Task :app:processReleaseResources UP-TO-DATE
+[        ] Caching disabled for task ':app:processReleaseResources' because:    
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:processReleaseResources' as it is up-to-date.    
+[        ] Resolve mutations for :app:compileReleaseKotlin
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:compileReleaseKotlin (Thread[#483,Execution worker Thread       
+2,5,main]) started.
+[        ] > Task :app:compileReleaseKotlin UP-TO-DATE
+[        ] Adding -Xuse-inline-scopes-numbers Kotlin compiler flag for task     
+:app:compileDebugAndroidTestKotlin
+[        ] GradleBuildProject.Builder should not be accessed through
+AnalyticsConfiguratorService after AnalyticsService is created. Analytics       
+information of this build might be incomplete.
+[        ] Caching disabled for task ':app:compileReleaseKotlin' because:       
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:compileReleaseKotlin' as it is up-to-date.       
+[        ] Resolve mutations for :app:javaPreCompileRelease
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:javaPreCompileRelease (Thread[#483,Execution worker Thread      
+2,5,main]) started.
+[        ] > Task :app:javaPreCompileRelease UP-TO-DATE
+[        ] Caching disabled for task ':app:javaPreCompileRelease' because:      
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:javaPreCompileRelease' as it is up-to-date.      
+[        ] Resolve mutations for :app:compileReleaseJavaWithJavac
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:compileReleaseJavaWithJavac (Thread[#483,Execution worker Thread2,5,main]) started.
+[        ] > Task :app:compileReleaseJavaWithJavac UP-TO-DATE
+[        ] Custom actions are attached to task
+':app:compileReleaseJavaWithJavac'.
+[   +3 ms] Caching disabled for task ':app:compileReleaseJavaWithJavac' because:[        ]   Build cache is disabled
+[        ] Skipping task ':app:compileReleaseJavaWithJavac' as it is up-to-date.[        ] No compile result for :app:compileReleaseJavaWithJavac
+[        ] No compile result for :app:compileReleaseJavaWithJavac
+[        ] No compile result for :app:compileReleaseJavaWithJavac
+[        ] Resolve mutations for :app:dexBuilderRelease (Thread[#483,Execution  
+worker Thread 2,5,main]) started.
+[        ] :app:dexBuilderRelease (Thread[#483,Execution worker Thread
+2,5,main]) started.
+[        ] > Task :app:dexBuilderRelease UP-TO-DATE
+[        ] Caching disabled for task ':app:dexBuilderRelease' because:
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:dexBuilderRelease' as it is up-to-date.
+[        ] Resolve mutations for :app:desugarReleaseFileDependencies
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:desugarReleaseFileDependencies (Thread[#481,included
+builds,5,main]) started.
+[        ] > Task :app:desugarReleaseFileDependencies UP-TO-DATE
+[        ] Caching disabled for task ':app:desugarReleaseFileDependencies'      
+because:
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:desugarReleaseFileDependencies' as it is
+up-to-date.
+[        ] Resolve mutations for :app:mergeReleaseStartupProfile
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:mergeReleaseStartupProfile (Thread[#481,included builds,5,main])started.
+[        ] > Task :app:mergeReleaseStartupProfile UP-TO-DATE
+[        ] Caching disabled for task ':app:mergeReleaseStartupProfile' because: 
+[        ]   Build cache is disabled
+[        ]   Simple merging task
+[        ] Skipping task ':app:mergeReleaseStartupProfile' as it is up-to-date. 
+[        ] Resolve mutations for :app:mergeExtDexRelease (Thread[#481,included  
+builds,5,main]) started.
+[        ] :app:mergeExtDexRelease (Thread[#481,included builds,5,main])        
+started.
+[        ] > Task :app:mergeExtDexRelease UP-TO-DATE
+[        ] Caching disabled for task ':app:mergeExtDexRelease' because:
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:mergeExtDexRelease' as it is up-to-date.
+[        ] Resolve mutations for :app:mergeDexRelease (Thread[#481,included     
+builds,5,main]) started.
+[        ] :app:mergeDexRelease (Thread[#481,included builds,5,main]) started.  
+[        ] > Task :app:mergeDexRelease UP-TO-DATE
+[        ] Caching disabled for task ':app:mergeDexRelease' because:
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:mergeDexRelease' as it is up-to-date.
+[        ] Resolve mutations for :app:mergeReleaseArtProfile
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:mergeReleaseArtProfile (Thread[#481,included builds,5,main])    
+started.
+[        ] > Task :app:mergeReleaseArtProfile UP-TO-DATE
+[   +2 ms] Caching disabled for task ':app:mergeReleaseArtProfile' because:     
+[        ]   Build cache is disabled
+[        ]   Simple merging task
+[        ] Skipping task ':app:mergeReleaseArtProfile' as it is up-to-date.     
+[        ] Resolve mutations for :app:mergeReleaseGlobalSynthetics
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:mergeReleaseGlobalSynthetics (Thread[#481,included
+builds,5,main]) started.
+[        ] > Task :app:mergeReleaseGlobalSynthetics UP-TO-DATE
+[        ] Caching disabled for task ':app:mergeReleaseGlobalSynthetics'        
+because:
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:mergeReleaseGlobalSynthetics' as it is
+up-to-date.
+[        ] Resolve mutations for :app:compileReleaseArtProfile
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:compileReleaseArtProfile (Thread[#481,included builds,5,main])  
+started.
+[        ] > Task :app:compileReleaseArtProfile UP-TO-DATE
+[        ] Caching disabled for task ':app:compileReleaseArtProfile' because:   
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:compileReleaseArtProfile' as it is up-to-date.   
+[        ] Resolve mutations for :app:compressReleaseAssets
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:compressReleaseAssets (Thread[#481,included builds,5,main])     
+started.
+[        ] > Task :app:compressReleaseAssets UP-TO-DATE
+[        ] Caching disabled for task ':app:compressReleaseAssets' because:      
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:compressReleaseAssets' as it is up-to-date.      
+[        ] Resolve mutations for :app:extractReleaseVersionControlInfo
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:extractReleaseVersionControlInfo (Thread[#481,included
+builds,5,main]) started.
+[        ] > Task :app:extractReleaseVersionControlInfo UP-TO-DATE
+[        ] Caching disabled for task ':app:extractReleaseVersionControlInfo'    
+because:
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:extractReleaseVersionControlInfo' as it is
+up-to-date.
+[        ] Resolve mutations for :app:processReleaseJavaRes
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:processReleaseJavaRes (Thread[#481,included builds,5,main])     
+started.
+[        ] > Task :app:processReleaseJavaRes UP-TO-DATE
+[        ] file or directory 'C:\handiartisan\android\app\src\main\resources',  
+not found
+[        ] file or directory
+'C:\handiartisan\android\app\src\release\resources', not found
+[        ] file or directory 'C:\handiartisan\android\app\src\main\resources',  
+not found
+[        ] file or directory
+'C:\handiartisan\android\app\src\release\resources', not found
+[        ] Caching disabled for task ':app:processReleaseJavaRes' because:      
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:processReleaseJavaRes' as it is up-to-date.      
+[        ] Resolve mutations for :app:mergeReleaseJavaResource
+(Thread[#481,included builds,5,main]) started.
+[   +3 ms] :app:mergeReleaseJavaResource (Thread[#481,included builds,5,main])  
+started.
+[        ] > Task :app:mergeReleaseJavaResource UP-TO-DATE
+[        ] Caching disabled for task ':app:mergeReleaseJavaResource' because:   
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:mergeReleaseJavaResource' as it is up-to-date.   
+[        ] Resolve mutations for :app:optimizeReleaseResources
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:optimizeReleaseResources (Thread[#481,included builds,5,main])  
+started.
+[        ] > Task :app:optimizeReleaseResources UP-TO-DATE
+[        ] Custom actions are attached to task ':app:optimizeReleaseResources'. 
+[        ] Caching disabled for task ':app:optimizeReleaseResources' because:   
+[        ]   Build cache is disabled
+[        ] Skipping task ':app:optimizeReleaseResources' as it is up-to-date.   
+[        ] Resolve mutations for :app:collectReleaseDependencies
+(Thread[#481,included builds,5,main]) started.
+[        ] :app:collectReleaseDependencies (Thread[#481,included builds,5,main])started.
+[        ] > Task :app:collectReleaseDependencies UP-TO-DATE
+[        ] Caching disabled for task ':app:collectReleaseDependencies' because: 
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:collectReleaseDependencies' as it is up-to-date. 
+[        ] Resolve mutations for :app:sdkReleaseDependencyData
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:sdkReleaseDependencyData (Thread[#483,Execution worker Thread   
+2,5,main]) started.
+[        ] > Task :app:sdkReleaseDependencyData UP-TO-DATE
+[        ] Caching disabled for task ':app:sdkReleaseDependencyData' because:   
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:sdkReleaseDependencyData' as it is up-to-date.
+[        ] Resolve mutations for :app:writeReleaseAppMetadata
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:writeReleaseAppMetadata (Thread[#483,Execution worker Thread    
+2,5,main]) started.
+[        ] > Task :app:writeReleaseAppMetadata UP-TO-DATE
+[        ] Caching disabled for task ':app:writeReleaseAppMetadata' because:    
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:writeReleaseAppMetadata' as it is up-to-date.    
+[        ] Resolve mutations for :app:writeReleaseSigningConfigVersions
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:writeReleaseSigningConfigVersions (Thread[#483,Execution worker 
+Thread 2,5,main]) started.
+[        ] > Task :app:writeReleaseSigningConfigVersions UP-TO-DATE
+[        ] Caching disabled for task ':app:writeReleaseSigningConfigVersions'   
+because:
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:writeReleaseSigningConfigVersions' as it is      
+up-to-date.
+[   +4 ms] Resolve mutations for :app:packageRelease (Thread[#483,Execution     
+worker Thread 2,5,main]) started.
+[        ] :app:packageRelease (Thread[#483,Execution worker Thread 2,5,main])  
+started.
+[        ] > Task :app:packageRelease UP-TO-DATE
+[        ] Custom actions are attached to task ':app:packageRelease'.
+[        ] Caching disabled for task ':app:packageRelease' because:
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:packageRelease' as it is up-to-date.
+[        ] Resolve mutations for :app:createReleaseApkListingFileRedirect       
+(Thread[#483,Execution worker Thread 2,5,main]) started.
+[        ] :app:createReleaseApkListingFileRedirect (Thread[#483,Execution      
+worker Thread 2,5,main]) started.
+[        ] > Task :app:createReleaseApkListingFileRedirect UP-TO-DATE
+[        ] Caching disabled for task ':app:createReleaseApkListingFileRedirect' 
+because:
+[        ]   Build cache is disabled
+[        ]   Caching has been disabled for the task
+[        ] Skipping task ':app:createReleaseApkListingFileRedirect' as it is    
+up-to-date.
+[        ] Resolve mutations for :app:assembleRelease (Thread[#483,Execution    
+worker Thread 2,5,main]) started.
+[        ] :app:assembleRelease (Thread[#483,Execution worker Thread 2,5,main]) 
+started.
+[  +47 ms] > Task :app:assembleRelease
+[        ] Caching disabled for task ':app:assembleRelease' because:
+[        ]   Build cache is disabled
+[        ] Task ':app:assembleRelease' is not up-to-date because:
+[        ]   Task has not declared any outputs despite executing actions.       
+[ +918 ms] [Incubating] Problems report is available at:
+file:///C:/handiartisan/android/build/reports/problems/problems-report.html     
+[   +1 ms] Deprecated Gradle features were used in this build, making it
+incompatible with Gradle 9.0.
+[        ] You can use '--warning-mode all' to show the individual deprecation  
+warnings and determine if they come from your own scripts or plugins.
+[        ] For more on this, please refer to
+https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+[        ] BUILD SUCCESSFUL in 56s
+[   +4 ms] 433 actionable tasks: 12 executed, 421 up-to-date
+[  +46 ms] Watched directory hierarchies:
+[C:\src\flutter\packages\flutter_tools\gradle, C:\handiartisan\android]
+[  +66 ms] Running Gradle task 'assembleRelease'... (completed in 57.1s)
+[  +39 ms] LocalFile: 'C:\handiartisan\android\build.gradle.kts' doesn't providean AGP version. Checking settings.
+[   +2 ms] LocalFile: 'C:\handiartisan\android\settings.gradle.kts' provides AGPversion: 8.9.1
+[  +22 ms] "flutter apk" took 58,722ms.
+[ +141 ms] Gradle build failed to produce an .apk file. It's likely that this
+file was
+                    generated under C:\handiartisan\build, but the tool couldn'tfind it.
+[  +10 ms] 
+           #0      throwToolExit
+(package:flutter_tools/src/base/common.dart:34:3)
+           #1      _exitWithExpectedFileNotFound
+           (package:flutter_tools/src/android/gradle.dart:1235:3)
+           #2      AndroidGradleBuilder.buildGradleApp
+           (package:flutter_tools/src/android/gradle.dart:634:9)
+           <asynchronous suspension>
+           #3      AndroidGradleBuilder.buildApk
+           (package:flutter_tools/src/android/gradle.dart:234:5)
+           <asynchronous suspension>
+           #4      BuildApkCommand.runCommand
+           (package:flutter_tools/src/commands/build_apk.dart:131:5)
+           <asynchronous suspension>
+           #5      FlutterCommand.run.<anonymous closure>
+           (package:flutter_tools/src/runner/flutter_command.dart:1590:27)      
+           <asynchronous suspension>
+           #6      AppContext.run.<anonymous closure>
+           (package:flutter_tools/src/base/context.dart:154:19)
+           <asynchronous suspension>
+           #7      CommandRunner.runCommand
+(package:args/command_runner.dart:212:13)
+           <asynchronous suspension>
+           #8      FlutterCommandRunner.runCommand.<anonymous closure>
+           (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9) 
+           <asynchronous suspension>
+           #9      AppContext.run.<anonymous closure>
+           (package:flutter_tools/src/base/context.dart:154:19)
+           <asynchronous suspension>
+           #10     FlutterCommandRunner.runCommand
+           (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5) 
+           <asynchronous suspension>
+           #11     FlutterCommandRunner.run.<anonymous closure>
+           (package:flutter_tools/src/runner/flutter_command_runner.dart:307:33)           <asynchronous suspension>
+           #12     run.<anonymous closure>.<anonymous closure>
+           (package:flutter_tools/runner.dart:104:11)
+           <asynchronous suspension>
+           #13     AppContext.run.<anonymous closure>
+           (package:flutter_tools/src/base/context.dart:154:19)
+           <asynchronous suspension>
+           #14     main (package:flutter_tools/executable.dart:103:3)
+           <asynchronous suspension>
+
+
+[   +6 ms] Running 1 shutdown hook
+[   +1 ms] Shutdown hooks complete
+[ +290 ms] exiting with code 1
+
+Command exited with code 1

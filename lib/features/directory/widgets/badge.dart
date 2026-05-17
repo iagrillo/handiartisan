@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../ui/app_theme.dart';
 
 class Badge extends StatelessWidget {
   final String label;
@@ -7,12 +8,12 @@ class Badge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: AppTheme.spaceSM, vertical: AppTheme.spaceXS),
       decoration: BoxDecoration(
-        color: Colors.blue,
-        borderRadius: BorderRadius.circular(12),
+        color: AppTheme.primary,
+        borderRadius: BorderRadius.circular(AppTheme.radiusMD),
       ),
-      child: Text(label, style: TextStyle(color: Colors.white)),
+      child: Text(label, style: AppTheme.labelSmall.copyWith(color: Colors.white)),
     );
   }
 }

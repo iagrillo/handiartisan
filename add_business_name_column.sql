@@ -1,0 +1,10 @@
+-- Add all missing columns to artisans table
+ALTER TABLE artisans ADD COLUMN IF NOT EXISTS business_name TEXT;
+ALTER TABLE artisans ADD COLUMN IF NOT EXISTS whatsapp TEXT;
+ALTER TABLE artisans ADD COLUMN IF NOT EXISTS category_id INTEGER;
+ALTER TABLE artisans ADD COLUMN IF NOT EXISTS category TEXT;
+ALTER TABLE artisans ADD COLUMN IF NOT EXISTS bio TEXT;
+ALTER TABLE artisans ADD COLUMN IF NOT EXISTS profile_image_url TEXT;
+ALTER TABLE artisans ADD COLUMN IF NOT EXISTS status TEXT DEFAULT 'active';
+ALTER TABLE artisans ADD COLUMN IF NOT EXISTS is_available BOOLEAN DEFAULT true;
+ALTER TABLE artisans ADD COLUMN IF NOT EXISTS password TEXT;

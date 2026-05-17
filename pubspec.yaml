@@ -1,0 +1,64 @@
+name: handihub_artisan_app
+description: A Flutter app for Handihub Artisan
+publish_to: 'none'
+
+version: 12.3.1+12301
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  supabase_flutter: ^2.12.0
+  image_picker: ^1.0.0
+  permission_handler: ^12.0.1
+  provider: ^6.0.0
+  file_picker: ^10.3.10
+  geolocator: ^14.0.2
+  url_launcher: ^6.2.5
+  flutter_svg: ^2.2.4
+  syncfusion_flutter_pdfviewer: ^32.2.9
+  crypto: ^3.0.0
+  http: ^1.0.0
+  flutter_dotenv: ^6.0.1
+  flutter_secure_storage: ^9.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env
+    - assets/artisan_directory_logo.png
+    - assets/Handihub Artisanlogo.png
+    - assets/equipment1.png
+    - assets/equipment2.png
+    - assets/equipment3.png
+    - assets/equipment4.png
+    - assets/equipment5.png
+    - assets/equipment6.png
+    - assets/equipment7.png
+    - assets/equipment8.png
+    - assets/equipment9.png
+    - assets/equipment10.png
+    - assets/equipment11.png
+    - assets/equipment12.png
+    - assets/deep_bucket_batching_plant.png
+    - assets/concrete_pump.png
+    - assets/tora_batching_plant.png
+    - assets/mobile_batching_plant.png
+    - assets/cslm.png
+    - assets/rmc.png
+    - assets/large_infra.png
+    - assets/paver_machine.png
+    - assets/conmat_logo.png
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/artisan_directory_logo.png"

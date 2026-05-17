@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../ui/app_theme.dart';
 
 class UILabel extends StatelessWidget {
   final String text;
@@ -20,12 +21,12 @@ class UILabel extends StatelessWidget {
       children: [
         Text(
           text + (required ? ' *' : ''),
-          style: style ?? TextStyle(fontWeight: FontWeight.bold),
+          style: style ?? AppTheme.labelLarge,
         ),
         if (errorText != null)
           Padding(
-            padding: const EdgeInsets.only(left: 8.0),
-            child: Text(errorText!, style: TextStyle(color: Colors.red, fontSize: 12)),
+            padding: const EdgeInsets.only(left: AppTheme.spaceSM),
+            child: Text(errorText!, style: AppTheme.bodySmall.copyWith(color: AppTheme.error)),
           ),
       ],
     );

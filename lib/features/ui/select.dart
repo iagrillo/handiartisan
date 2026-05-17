@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../ui/app_theme.dart';
 
 class UISelect extends StatelessWidget {
   final List<String> options;
@@ -26,18 +27,19 @@ class UISelect extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (label != null) ...[
-          Text(label!, style: TextStyle(fontWeight: FontWeight.bold)),
-          SizedBox(height: 4),
+          Text(label!, style: AppTheme.labelLarge),
+          const SizedBox(height: AppTheme.spaceXS),
         ],
         DropdownButtonFormField<String>(
           value: value,
           onChanged: enabled ? onChanged : null,
-          items: options.map((opt) => DropdownMenuItem(value: opt, child: Text(opt))).toList(),
+          style: AppTheme.bodyMedium,
+          items: options
+              .map((opt) => DropdownMenuItem(value: opt, child: Text(opt)))
+              .toList(),
           decoration: InputDecoration(
             hintText: hint,
             errorText: errorText,
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-            contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           ),
         ),
       ],

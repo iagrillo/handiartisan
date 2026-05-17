@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../ui/app_theme.dart';
 
 class UICard extends StatelessWidget {
   final Widget child;
@@ -6,6 +7,7 @@ class UICard extends StatelessWidget {
   final String? subtitle;
   final List<Widget>? actions;
   final EdgeInsetsGeometry? padding;
+  final bool elevated;
 
   const UICard({
     required this.child,
@@ -13,26 +15,36 @@ class UICard extends StatelessWidget {
     this.subtitle,
     this.actions,
     this.padding,
+    this.elevated = false,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
+      decoration: BoxDecoration(
+        color: AppTheme.cardBackground,
+        borderRadius: BorderRadius.circular(AppTheme.radiusLG),
+        border: elevated ? null : Border.all(color: AppTheme.divider, width: 1),
+        boxShadow: elevated ? AppTheme.shadowMD : AppTheme.shadowSM,
+      ),
       child: Padding(
-        padding: padding ?? const EdgeInsets.all(12.0),
+        padding: padding ?? const EdgeInsets.all(AppTheme.spaceBase),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (title != null)
-              Text(title!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-            if (subtitle != null)
-              Padding(
-                padding: const EdgeInsets.only(top: 2.0, bottom: 8.0),
-                child: Text(subtitle!, style: TextStyle(color: Colors.grey[700])),
-              ),
-            if (actions != null && actions!.isNotEmpty)
+            if (title != null) ...[
+              Text(title!, style: AppTheme.titleMedium),
+              if (subtitle != null) ...[
+                const SizedBox(height: AppTheme.spaceXXS),
+                Text(subtitle!, style: AppTheme.bodySmall),
+              ],
+              const SizedBox(height: AppTheme.spaceSM),
+            ],
+            if (actions != null && actions!.isNotEmpty) ...[
               Row(children: actions!),
+              const SizedBox(height: AppTheme.spaceSM),
+            ],
             child,
           ],
         ),
