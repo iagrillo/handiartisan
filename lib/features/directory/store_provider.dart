@@ -25,39 +25,29 @@ class StoreProvider extends ChangeNotifier {
   Future<void> fetchStores() async {
     loading = true;
     notifyListeners();
-
     try {
       var query = _client.from('stores').select().eq('status', 'approved');
-
       final s = search.trim();
       final c = category.trim();
       final st = state.trim();
       final ci = city.trim();
-
-      print('[DEBUG] fetchStores: state="$st", city="$ci", category="$c", search="$s"');
-
-      // Build or() filter for multi-field search
+      print('[DEBUG] fetchStores: location_state="$st", location_city="$ci", category="$c", search="$s"');
+      // Multi-field search
       if (s.isNotEmpty) {
-        query = query.or(
-          'name.ilike.%$s%,category.ilike.%$s%,city.ilike.%$s%,state.ilike.%$s%',
-        );
+        query = query.or('name.ilike.%$s%,category.ilike.%$s%,location_city.ilike.%$s%,location_state.ilike.%$s%');
       }
-      // Only add .eq() filters if value is not empty
       if (c.isNotEmpty) {
         query = query.eq('category', c);
       }
-      // Strict state/city filtering
       if (st.isNotEmpty) {
-        query = query.eq('state', st);
+        query = query.eq('location_state', st);
       }
       if (ci.isNotEmpty) {
-        query = query.eq('city', ci);
+        query = query.eq('location_city', ci);
       }
-
       final response = await query.order('created_at', ascending: false);
       print('[DEBUG] fetchStores: response count = "+${(response as List).length}"');
       stores = List<Map<String, dynamic>>.from(response as List);
-
       featuredStores = stores.where((row) {
         final isFeatured = row['is_featured'] == true;
         final rating = (row['rating'] is num) ? (row['rating'] as num).toDouble() : 0.0;
@@ -97,7 +87,7 @@ class StoreProvider extends ChangeNotifier {
 
   Future<void> fetchStatesAndCities() async {
     try {
-      final rows = await _client.from('stores').select('state, city').eq('status', 'approved').limit(5000);
+      final rows = await _client.from('stores').select('location_state, location_city').eq('status', 'approved').limit(5000);
       final data = List<Map<String, dynamic>>.from(rows as List);
 
       final states = <String>{};
@@ -105,8 +95,8 @@ class StoreProvider extends ChangeNotifier {
       final map = <String, Set<String>>{};
 
       for (final row in data) {
-        final st = (row['state'] ?? '').toString().trim();
-        final ct = (row['city'] ?? '').toString().trim();
+        final st = (row['location_state'] ?? '').toString().trim();
+        final ct = (row['location_city'] ?? '').toString().trim();
 
         if (st.isNotEmpty) {
           states.add(st);

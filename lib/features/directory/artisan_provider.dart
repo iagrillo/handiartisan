@@ -57,7 +57,10 @@ class ArtisanProvider extends ChangeNotifier {
       print('[DEBUG] fetchArtisans: state="$state", city="$city", category="$category", search="$search"');
 
       if (search.isNotEmpty) {
-        query = query.ilike('full_name', '%$search%');
+        // Multi-field search: full_name, skills, category, city, state
+        query = query.or(
+          'full_name.ilike.%$search%,skills.ilike.%$search%,category.ilike.%$search%,city.ilike.%$search%,state.ilike.%$search%'
+        );
       }
       if (category.isNotEmpty) {
         query = query.eq('category', category);

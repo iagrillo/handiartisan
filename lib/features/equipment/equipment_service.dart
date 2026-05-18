@@ -44,9 +44,12 @@ class EquipmentService {
         // Filter by search
         if (search != null && search.isNotEmpty) {
           final searchLower = search.toLowerCase();
-          filtered = filtered.where((e) => 
-            ((e['name'] ?? '').toString().toLowerCase().contains(searchLower)) ||
-            ((e['description'] ?? '').toString().toLowerCase().contains(searchLower))
+          filtered = filtered.where((e) =>
+              ((e['name'] ?? '').toString().toLowerCase().contains(searchLower)) ||
+              ((e['description'] ?? '').toString().toLowerCase().contains(searchLower)) ||
+              ((e['category'] ?? '').toString().toLowerCase().contains(searchLower)) ||
+              ((e['location_city'] ?? '').toString().toLowerCase().contains(searchLower)) ||
+              ((e['location_state'] ?? '').toString().toLowerCase().contains(searchLower))
           ).toList();
         }
         
