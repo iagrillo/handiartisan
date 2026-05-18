@@ -14,6 +14,9 @@ import '../wallet/wallet_page.dart';
 import '../jobs/jobs_page.dart';
 import '../ui/app_theme.dart';
 import '../auth/password_recovery_flow.dart';
+import 'package:provider/provider.dart';
+import '../utils/location_helper.dart';
+import 'artisan_provider.dart';
 
 class DirectoryPage extends StatefulWidget {
   const DirectoryPage({Key? key}) : super(key: key);
@@ -590,23 +593,24 @@ class _DirectoryPageState extends State<DirectoryPage>
   }
 
   Future<void> _toggleLocation() async {
+    final provider = Provider.of<ArtisanProvider>(context, listen: false);
     if (_locationEnabled) {
       setState(() {
         _locationEnabled = false;
         _userLatitude = null;
         _userLongitude = null;
       });
-      await _fetchArtisans();
+      provider.setNearMe(false);
     } else {
       try {
-        final position = await _locationService.getCurrentPosition();
+        final position = await LocationHelper.getCurrentPosition();
         if (position != null) {
           setState(() {
             _locationEnabled = true;
             _userLatitude = position.latitude;
             _userLongitude = position.longitude;
           });
-          await _fetchArtisans();
+          provider.setNearMe(true, lat: position.latitude, lng: position.longitude);
         } else {
           if (mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
@@ -622,7 +626,7 @@ class _DirectoryPageState extends State<DirectoryPage>
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text('Location error: $e'),
+              content: Text('Error: $e'),
               backgroundColor: AppTheme.error,
             ),
           );
@@ -1042,9 +1046,13 @@ class _DirectoryPageState extends State<DirectoryPage>
               (a.isSponsored && a.adType == AdType.featured);
         }).toList(),
       );
-      final organic = _artisans.where((a) => !a.isSponsored).toList();
-      final displayListings = organic.isNotEmpty ? organic : _fallbackArtisans();
-      final featuredDisplay =
+        final organic = _artisans.where((a) => !a.isSponsored).toList();
+        // Determine if any filter is active
+        final bool filterActive = _search.isNotEmpty || _state.isNotEmpty || _city.isNotEmpty || _category.isNotEmpty;
+        final displayListings = (organic.isNotEmpty)
+          ? organic
+          : (filterActive ? [] : _fallbackArtisans());
+        final featuredDisplay =
           featured.isNotEmpty ? featured : _fallbackArtisans().take(3).toList();
 
       body = ColoredBox(
