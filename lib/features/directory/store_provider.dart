@@ -34,6 +34,8 @@ class StoreProvider extends ChangeNotifier {
       final st = state.trim();
       final ci = city.trim();
 
+      print('[DEBUG] fetchStores: state="$st", city="$ci", category="$c", search="$s"');
+
       // Build or() filter for multi-field search
       if (s.isNotEmpty) {
         query = query.or(
@@ -53,6 +55,7 @@ class StoreProvider extends ChangeNotifier {
       }
 
       final response = await query.order('created_at', ascending: false);
+      print('[DEBUG] fetchStores: response count = "+${(response as List).length}"');
       stores = List<Map<String, dynamic>>.from(response as List);
 
       featuredStores = stores.where((row) {
@@ -60,7 +63,8 @@ class StoreProvider extends ChangeNotifier {
         final rating = (row['rating'] is num) ? (row['rating'] as num).toDouble() : 0.0;
         return isFeatured || rating >= 4.5;
       }).toList();
-    } catch (_) {
+    } catch (e) {
+      print('[Supabase] fetchStores exception: $e');
       stores = [];
       featuredStores = [];
     } finally {

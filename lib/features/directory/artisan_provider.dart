@@ -54,6 +54,8 @@ class ArtisanProvider extends ChangeNotifier {
       final client = SupabaseUtils.client;
       var query = client.from('artisans').select();
 
+      print('[DEBUG] fetchArtisans: state="$state", city="$city", category="$category", search="$search"');
+
       if (search.isNotEmpty) {
         query = query.ilike('full_name', '%$search%');
       }
@@ -69,12 +71,7 @@ class ArtisanProvider extends ChangeNotifier {
       }
 
       final response = await query;
-      if (response == null) {
-        print('[Supabase] fetchArtisans: Response is null');
-        artisans = [];
-        notifyListeners();
-        return;
-      }
+      print('[DEBUG] fetchArtisans: response count = "+${(response as List).length}"');
       artisans = (response as List)
           .map((json) => Artisan.fromJson(json as Map<String, dynamic>))
           .toList();

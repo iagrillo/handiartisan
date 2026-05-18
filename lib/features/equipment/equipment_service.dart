@@ -140,6 +140,8 @@ class EquipmentService {
         ).toList();
       }
 
+      // Debug print for filter
+      print('[DEBUG] fetchEquipment: state="$state", city="$city", category="$category", search="$search"');
       // Strict filter by state/city
       if (state != null && state.isNotEmpty) {
         filtered = filtered.where((e) => (e['state'] ?? '') == state).toList();
@@ -147,6 +149,7 @@ class EquipmentService {
       if (city != null && city.isNotEmpty) {
         filtered = filtered.where((e) => (e['city'] ?? '') == city).toList();
       }
+      print('[DEBUG] fetchEquipment: filtered count = ${filtered.length}');
 
       // Sort by created_at descending
       filtered.sort((a, b) {
