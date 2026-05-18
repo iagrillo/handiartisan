@@ -2,14 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../providers/auth_provider.dart';
 import '../../providers/wallet_security_provider.dart';
 
-import 'package:supabase_flutter/supabase_flutter.dart';
-
 import '../../services/payment_service.dart';
-import '../../widgets/paystack_payment_button.dart';
 
 import '../auth/login_screen.dart';
 import '../models/job.dart';
@@ -126,8 +124,56 @@ class _WalletPageState extends State<WalletPage> with WidgetsBindingObserver {
       }
     // Add stub for _buildTransactionsSection to fix missing method error
     Widget _buildTransactionsSection() {
-      // TODO: Implement actual transaction list UI
-      return const SizedBox.shrink();
+      if (_transactions.isEmpty) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 24),
+          child: Center(
+            child: Text('No transactions yet.', style: AppTheme.bodyMedium),
+          ),
+        );
+      }
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Transactions', style: AppTheme.headline3),
+          const SizedBox(height: 12),
+          ..._transactions.map((tx) => Card(
+            margin: const EdgeInsets.symmetric(vertical: 6),
+            child: ListTile(
+              leading: Icon(
+                tx.type == 'withdrawal'
+                    ? Icons.arrow_downward
+                    : tx.type == 'transfer'
+                        ? Icons.swap_horiz
+                        : Icons.account_balance_wallet,
+                color: tx.type == 'withdrawal'
+                    ? Colors.red
+                    : tx.type == 'transfer'
+                        ? Colors.blue
+                        : Colors.grey,
+              ),
+              title: Text(
+                tx.type.toUpperCase(),
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                tx.createdAt != null
+                    ? tx.createdAt.toString()
+                    : '',
+              ),
+              trailing: Text(
+                '₦${_formatAmount(tx.amount)}',
+                style: TextStyle(
+                  color: tx.type == 'withdrawal'
+                      ? Colors.red
+                      : Colors.green,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          )).toList(),
+        ],
+      );
     }
   // Add stub for _buildPendingJobsSection to fix missing method error
   Widget _buildPendingJobsSection() {
@@ -135,55 +181,6 @@ class _WalletPageState extends State<WalletPage> with WidgetsBindingObserver {
   }
 
   // Move dialog methods above build to avoid reference errors
-  void _showDepositDialog() {
-    final amountController = TextEditingController();
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Deposit Funds'),
-        content: TextField(
-          controller: amountController,
-          keyboardType: TextInputType.number,
-          decoration: const InputDecoration(labelText: 'Amount (₦)'),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
-          ),
-          ElevatedButton(
-            onPressed: () async {
-              final amount = int.tryParse(amountController.text.trim()) ?? 0;
-              if (amount <= 0) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Enter a valid amount.')),
-                );
-                return;
-              }
-              if (_artisanId == null) return;
-              final success =
-                  await PaymentService.depositToWallet(_artisanId!, amount);
-              if (success) {
-                if (mounted) {
-                  Navigator.pop(context);
-                  await _loadAllData();
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('₦$amount deposited successfully!')),
-                  );
-                }
-              } else {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Deposit failed.')),
-                );
-              }
-            },
-            child: const Text('Deposit'),
-          ),
-        ],
-      ),
-    );
-  }
-
   void _showTransferDialog() {
     final amountController = TextEditingController();
     final emailController = TextEditingController();
@@ -1026,28 +1023,6 @@ class _WalletPageState extends State<WalletPage> with WidgetsBindingObserver {
           const SizedBox(height: 16),
           Row(
             children: [
-              // Fund Account Button (Paystack)
-              if (_artisanId != null && _wallet != null)
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 0),
-                    child: PaystackPaymentButton(
-                      artisanId: _artisanId!,
-                      customerEmail: _wallet!.accountName != null && _wallet!.accountName!.contains('@')
-                        ? _wallet!.accountName!
-                        : (Supabase.instance.client.auth.currentUser?.email ?? ''),
-                      amount: 3000, // Default/test amount, can be parameterized
-                      customerName: _wallet!.accountName,
-                      customerPhone: null,
-                      serviceType: null,
-                      description: 'Wallet fund',
-                      jobReference: null,
-                      address: null,
-                      buttonLabel: 'Fund Account',
-                    ),
-                  ),
-                ),
-              const SizedBox(width: 12),
               ElevatedButton.icon(
                 icon: const Icon(Icons.swap_horiz),
                 label: const Text('Transfer'),
@@ -1065,21 +1040,6 @@ class _WalletPageState extends State<WalletPage> with WidgetsBindingObserver {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _buildMiniStat(String label, String value) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(label,
-            style: const TextStyle(color: Colors.white70, fontSize: 12)),
-        Text(value,
-            style: const TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w600)),
-      ],
     );
   }
 

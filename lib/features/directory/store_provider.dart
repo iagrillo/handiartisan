@@ -27,23 +27,29 @@ class StoreProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
-      dynamic query = _client.from('stores').select().eq('status', 'approved');
+      var query = _client.from('stores').select().eq('status', 'approved');
 
       final s = search.trim();
+      final c = category.trim();
+      final st = state.trim();
+      final ci = city.trim();
+
+      // Build or() filter for multi-field search
       if (s.isNotEmpty) {
         query = query.or(
           'name.ilike.%$s%,category.ilike.%$s%,city.ilike.%$s%,state.ilike.%$s%',
         );
       }
-
-      if (category.trim().isNotEmpty) {
-        query = query.eq('category', category.trim());
+      // Only add .eq() filters if value is not empty
+      if (c.isNotEmpty) {
+        query = query.eq('category', c);
       }
-      if (state.trim().isNotEmpty) {
-        query = query.eq('state', state.trim());
+      // Strict state/city filtering
+      if (st.isNotEmpty) {
+        query = query.eq('state', st);
       }
-      if (city.trim().isNotEmpty) {
-        query = query.eq('city', city.trim());
+      if (ci.isNotEmpty) {
+        query = query.eq('city', ci);
       }
 
       final response = await query.order('created_at', ascending: false);

@@ -140,17 +140,10 @@ class EquipmentService {
         ).toList();
       }
 
-      // Filter by location
-      if (location != null && location.isNotEmpty && location != 'All Locations') {
-        filtered = filtered.where((e) => (e['city'] ?? '') == location).toList();
-      }
-
-      // Filter by state
+      // Strict filter by state/city
       if (state != null && state.isNotEmpty) {
         filtered = filtered.where((e) => (e['state'] ?? '') == state).toList();
       }
-
-      // Filter by city
       if (city != null && city.isNotEmpty) {
         filtered = filtered.where((e) => (e['city'] ?? '') == city).toList();
       }

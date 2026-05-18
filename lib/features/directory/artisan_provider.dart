@@ -60,6 +60,7 @@ class ArtisanProvider extends ChangeNotifier {
       if (category.isNotEmpty) {
         query = query.eq('category', category);
       }
+      // Strict state/city filtering
       if (state.isNotEmpty) {
         query = query.eq('state', state);
       }

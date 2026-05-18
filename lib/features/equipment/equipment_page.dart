@@ -273,13 +273,9 @@ class _EquipmentPageState extends State<EquipmentPage>
       final data = await _equipmentService.fetchEquipment(
         tab: _selectedTab,
         search: _search,
-        location: _city.isNotEmpty
-            ? _city
-            : (_state.isNotEmpty
-                ? _state
-                : (_selectedLocation == 'All Locations'
-                    ? null
-                    : _selectedLocation)),
+        state: _state.isNotEmpty ? _state : null,
+        city: _city.isNotEmpty ? _city : null,
+        // Remove ambiguous location param
       );
 
       if (!mounted) return;

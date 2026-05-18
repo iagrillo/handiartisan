@@ -65,31 +65,34 @@ class ArtisanService {
     String? state,
     String? city,
   }) async {
-    var query =
-        SupabaseUtils.client.from(_table).select().eq('status', 'active');
+    var query = SupabaseUtils.client.from(_table).select().eq('status', 'active');
 
-    if (search != null && search.isNotEmpty) {
-      query = query.ilike('full_name', '%$search%');
+    final s = search?.trim() ?? '';
+    final c = category?.trim() ?? '';
+    final st = state?.trim() ?? '';
+    final ci = city?.trim() ?? '';
+
+    // Multi-field search using or()
+    if (s.isNotEmpty) {
+      query = query.or(
+        'full_name.ilike.%$s%,category.ilike.%$s%,city.ilike.%$s%,state.ilike.%$s%',
+      );
     }
-
-    if (category != null && category.isNotEmpty) {
-      query = query.eq('category', category);
+    if (c.isNotEmpty) {
+      query = query.eq('category', c);
     }
-
-    if (state != null && state.isNotEmpty) {
-      query = query.eq('state', state);
+    if (st.isNotEmpty) {
+      query = query.eq('state', st);
     }
-
-    if (city != null && city.isNotEmpty) {
-      query = query.eq('city', city);
+    if (ci.isNotEmpty) {
+      query = query.eq('city', ci);
     }
 
     try {
       final response = await query;
-      print('[Supabase] fetchArtisans response: ${response.length} rows');
+      print('[Supabase] fetchArtisans response: [32m${response.length} rows[0m');
       if (response.isNotEmpty) {
-        print(
-            '[Supabase] First artisan profileImageUrl: ${response.first['profile_image_url']}');
+        print('[Supabase] First artisan profileImageUrl: ${response.first['profile_image_url']}');
       }
       return (response as List).map((json) => Artisan.fromJson(json)).toList();
     } catch (e) {
