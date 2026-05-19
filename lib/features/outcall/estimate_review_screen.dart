@@ -4,8 +4,11 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../services/outcall_service.dart';
 import '../../services/payment_service.dart';
+import '../../services/paystack_service.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../../widgets/escrow_badge.dart';
 import '../ui/app_theme.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Customer-facing screen to review artisan's estimate
 class EstimateReviewScreen extends StatefulWidget {
@@ -191,55 +194,39 @@ class _EstimateReviewScreenState extends State<EstimateReviewScreen> {
 
   Future<void> _processDeclineWithAction(String action) async {
     setState(() {
-      _isLoading = true;
-      _selectedResponse = 'decline';
-    });
+      setState(() => _isLoading = true);
+      try {
+        // Calculate total amount with 10% service fee
+        final estimateAmount = _totalEstimate;
+        if (estimateAmount <= 0) {
+          _showErrorSnackBar('Unable to initialize payment. Estimate amount is invalid.');
+          return;
+        }
+        final serviceFee = estimateAmount * 0.10;
+        final totalAmountWithFee = (estimateAmount + serviceFee).round();
 
-    try {
-      final client = Supabase.instance.client;
-
-      if (action == 'close_job') {
-        // Close the job - update status to closed
-        await client.from('jobs').update({
-          'status': 'closed',
-          'estimate_status': 'declined',
-          'declined_by': 'customer',
-          'estimate_responded_at': DateTime.now().toIso8601String(),
-        }).eq('job_reference', widget.jobReference);
-
-        if (!mounted) return;
-
-        _showResultDialog(
-            RespondEstimateResult(success: true, message: 'Job closed'),
-            'close_job');
-      } else {
-        // Request new estimate - keep the job in the estimate stage so the
-        // artisan can send a revised quote without confirming arrival again.
-        await client.from('jobs').update({
-          'status': 'arrival_confirmed',
-          'estimate_status': 'declined',
-          'declined_by':
-              null, // Clear declined_by so artisan knows customer wants new estimate
-          'customer_requested_new_estimate': true,
-          'estimate_responded_at': DateTime.now().toIso8601String(),
-          // Clear the old estimate so artisan can submit new one
-          'estimate_materials': null,
-          'estimate_materials_cost': null,
-          'estimate_labor_cost': null,
-          'estimate_total': null,
-          'estimate_timeline': null,
-          'estimate_notes': null,
-          'estimate_submitted_at': null,
-        }).eq('job_reference', widget.jobReference);
-
-        if (!mounted) return;
-
-        _showResultDialog(
-            RespondEstimateResult(
-                success: true, message: 'New estimate requested'),
-            'request_new');
+        final publicKey = dotenv.env['PAYSTACK_PUBLIC_KEY'] ?? 'NULL';
+        debugPrint('Paystack public key at runtime: ' + publicKey);
+        await PaystackService.checkout(
+          context: context,
+          publicKey: publicKey,
+          amount: totalAmountWithFee,
+          email: _effectiveJobData['customer_email']?.toString() ?? '',
+          reference: widget.jobReference,
+          onSuccess: () {
+            if (!mounted) return;
+            _showPaymentConfirmationDialog();
+          },
+          onClosed: () {
+            if (!mounted) return;
+            _showErrorSnackBar('Payment failed or cancelled.');
+          },
+        );
+      } catch (e) {
+        _showErrorSnackBar('Payment failed: $e');
+      } finally {
+        if (mounted) setState(() => _isLoading = false);
       }
-    } catch (e) {
       if (!mounted) return;
       _showErrorSnackBar('An error occurred: $e');
     } finally {
@@ -547,61 +534,39 @@ class _EstimateReviewScreenState extends State<EstimateReviewScreen> {
                 if (!mounted) return;
                 _showErrorSnackBar('Error checking payment status: $e');
               } finally {
-                if (mounted) setState(() => _isLoading = false);
-              }
-            },
-            child: const Text('Check Status'),
-          ),
-        ],
-      ),
-    );
-  }
+                setState(() => _isLoading = true);
+                try {
+                  // Calculate total amount with 10% service fee
+                  final estimateAmount = _totalEstimate;
+                  if (estimateAmount <= 0) {
+                    _showErrorSnackBar('Unable to initialize payment. Estimate amount is invalid.');
+                    return;
+                  }
+                  final serviceFee = estimateAmount * 0.10;
+                  final totalAmountWithFee = (estimateAmount + serviceFee).round();
 
-  Future<void> _processPaymentCashOrTransfer() async {
-    setState(() => _isLoading = true);
-
-    try {
-      // Accept the estimate
-      await _acceptEstimate();
-
-      if (!mounted) return;
-
-      // Show success message
-      _showSuccessDialog(
-        'Estimate Accepted',
-        'You have accepted the estimate. Please pay the artisan directly via cash or transfer. The job will be closed.',
-      );
-    } catch (e) {
-      if (!mounted) return;
-      _showErrorSnackBar('Error: $e');
-    } finally {
-      if (mounted) {
-        setState(() => _isLoading = false);
-      }
-    }
-  }
-
-  Future<void> _acceptEstimate() async {
-    final result = await OutcallService.respondToEstimate(
-      jobReference: widget.jobReference,
-      customerId: widget.customerId,
-      response: 'accept',
-    );
-
-    if (!result.success) {
-      throw Exception(result.message);
-    }
-  }
-
-  void _showSuccessDialog(String title, String message) {
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => AlertDialog(
-        title: Row(
-          children: [
-            const Icon(Icons.check_circle, color: AppTheme.success, size: 28),
-            const SizedBox(width: AppTheme.spaceSM),
+                  final publicKey = dotenv.env['PAYSTACK_PUBLIC_KEY'] ?? 'NULL';
+                  debugPrint('Paystack public key at runtime: $publicKey');
+                  await PaystackService.checkout(
+                    context: context,
+                    publicKey: publicKey,
+                    amount: totalAmountWithFee,
+                    email: _effectiveJobData['customer_email']?.toString() ?? '',
+                    reference: widget.jobReference,
+                    onSuccess: () {
+                      if (!mounted) return;
+                      _showPaymentConfirmationDialog();
+                    },
+                    onClosed: () {
+                      if (!mounted) return;
+                      _showErrorSnackBar('Payment failed or cancelled.');
+                    },
+                  );
+                } catch (e) {
+                  _showErrorSnackBar('Payment failed: $e');
+                } finally {
+                  if (mounted) setState(() => _isLoading = false);
+                }
             Text(title),
           ],
         ),

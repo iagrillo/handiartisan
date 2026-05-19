@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
+// import 'dart:convert';
 import '../models/artisan.dart';
 import '../models/category.dart';
+
+import '../../services/paystack_service.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../ui/app_theme.dart';
 
 import '../../services/artisan_service.dart';
@@ -20,6 +23,36 @@ class ArtisanProfilePage extends StatefulWidget {
 }
 
 class _ArtisanProfilePageState extends State<ArtisanProfilePage> {
+    bool _isPaying = false;
+
+    Future<void> _payAndBook() async {
+      setState(() => _isPaying = true);
+      debugPrint('Paystack public key at runtime: ' + (dotenv.env['PAYSTACK_PUBLIC_KEY'] ?? 'NULL'));
+      try {
+        final response = await PaystackService.checkout(
+          context: context,
+          amount: 5000, // Example amount, replace with real logic if needed
+          email: widget.artisan.email ?? '',
+          reference: 'Book_${widget.artisan.id}_${DateTime.now().millisecondsSinceEpoch}',
+        );
+        if (!mounted) return;
+        if (response.status == true) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Payment successful!')),
+          );
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Payment failed or cancelled.')),
+          );
+        }
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Payment error: $e')),
+        );
+      } finally {
+        if (mounted) setState(() => _isPaying = false);
+      }
+    }
   String? newProfileImageUrl;
   List<String> newGalleryImages = [];
   bool isProfileUploading = false;
@@ -49,10 +82,10 @@ class _ArtisanProfilePageState extends State<ArtisanProfilePage> {
     businessNameController = TextEditingController(text: widget.artisan.businessName ?? '');
     phoneController = TextEditingController(text: widget.artisan.phone);
     whatsappController = TextEditingController(text: widget.artisan.whatsapp ?? '');
-    categoryController = TextEditingController(text: widget.artisan.category ?? '');
+    categoryController = TextEditingController(text: widget.artisan.category);
     addressController = TextEditingController(text: widget.artisan.address ?? '');
     bioController = TextEditingController(text: widget.artisan.bio ?? '');
-    selectedCategory = widget.artisan.category ?? '';
+    selectedCategory = widget.artisan.category;
     selectedState = widget.artisan.state ?? '';
     selectedCity = widget.artisan.city ?? '';
     isAvailable = widget.artisan.isAvailable ?? false;
@@ -147,31 +180,37 @@ class _ArtisanProfilePageState extends State<ArtisanProfilePage> {
   }
 
   void handleSubmit() async {
-    setState(() { isSaving = true; });
-    if (!mounted) return;
-    final updated = {
-      'full_name': fullNameController.text.trim(),
-      'business_name': businessNameController.text.trim(),
-      'phone': phoneController.text.trim(),
-      'whatsapp': whatsappController.text.trim(),
-      'category': selectedCategory,
-      'state': selectedState,
-      'city': selectedCity,
-      'address': addressController.text.trim(),
-      'bio': bioController.text.trim(),
-      'is_available': isAvailable,
-      'latitude': latitude,
-      'longitude': longitude,
-      'profile_image_url': newProfileImageUrl ?? widget.artisan.profileImageUrl,
-      'gallery_image_urls': jsonEncode([
-        ...?widget.artisan.galleryImageUrls,
-        ...newGalleryImages,
-      ]),
-      'status': 'pending',
-    };
-    final id = widget.artisan.id;
-    if (id == null || id.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
+      setState(() => _isPaying = true);
+      try {
+        final publicKey = dotenv.env['PAYSTACK_PUBLIC_KEY'] ?? 'NULL';
+        debugPrint('Paystack public key at runtime: ' + publicKey);
+        await PaystackService.checkout(
+          context: context,
+          publicKey: publicKey,
+          amount: 5000, // Example amount, replace with real logic if needed
+          email: widget.artisan.email ?? '',
+          reference: 'Book_${widget.artisan.id}_${DateTime.now().millisecondsSinceEpoch}',
+          onSuccess: () {
+            if (!mounted) return;
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('Payment successful!')),
+            );
+            setState(() => _isPaying = false);
+          },
+          onClosed: () {
+            if (!mounted) return;
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text('Payment failed or cancelled.')),
+            );
+            setState(() => _isPaying = false);
+          },
+        );
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Payment error: $e')),
+        );
+        if (mounted) setState(() => _isPaying = false);
+      }
         SnackBar(content: Text('Profile ID missing or empty. Cannot update.')),
       );
       if (mounted) {
@@ -356,6 +395,16 @@ class _ArtisanProfilePageState extends State<ArtisanProfilePage> {
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Text('(${latitude!.toStringAsFixed(4)}, ${longitude!.toStringAsFixed(4)})'),
                     ),
+                  SizedBox(width: 16),
+                  ElevatedButton.icon(
+                    onPressed: _isPaying ? null : _payAndBook,
+                    icon: Icon(Icons.payment),
+                    label: _isPaying ? SizedBox(width: 16, height: 16, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white)) : Text('Pay and Book'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppTheme.primary,
+                      foregroundColor: Colors.white,
+                    ),
+                  ),
                 ],
               ),
               SizedBox(height: 16),

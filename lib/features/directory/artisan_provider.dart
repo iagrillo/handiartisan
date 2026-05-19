@@ -5,6 +5,22 @@ import '../models/category.dart';
 import '../utils/supabase.dart';
 
 class ArtisanProvider extends ChangeNotifier {
+  // Implements 'Near Me' filter by city/state match
+  bool _nearMeEnabled = false;
+  String? _nearMeCity;
+  String? _nearMeState;
+  void setNearMe(bool value, {double? lat, double? lng, String? city, String? state}) {
+    _nearMeEnabled = value;
+    if (value && city != null && state != null) {
+      _nearMeCity = city;
+      _nearMeState = state;
+    } else {
+      _nearMeCity = null;
+      _nearMeState = null;
+    }
+    fetchArtisans();
+    notifyListeners();
+  }
     // For compatibility with legacy code
     void setSelectedState(String value) {
       setStateFilter(value);
@@ -56,21 +72,25 @@ class ArtisanProvider extends ChangeNotifier {
 
       print('[DEBUG] fetchArtisans: state="$state", city="$city", category="$category", search="$search"');
 
-      if (search.isNotEmpty) {
-        // Multi-field search: full_name, skills, category, city, state
-        query = query.or(
-          'full_name.ilike.%$search%,skills.ilike.%$search%,category.ilike.%$search%,city.ilike.%$search%,state.ilike.%$search%'
-        );
-      }
-      if (category.isNotEmpty) {
-        query = query.eq('category', category);
-      }
-      // Strict state/city filtering
-      if (state.isNotEmpty) {
-        query = query.eq('state', state);
-      }
-      if (city.isNotEmpty) {
-        query = query.eq('city', city);
+      if (_nearMeEnabled && _nearMeCity != null && _nearMeState != null) {
+        query = query.eq('city', _nearMeCity!).eq('state', _nearMeState!);
+      } else {
+        if (search.isNotEmpty) {
+          // Multi-field search: full_name, skills, category, city, state
+          query = query.or(
+            'full_name.ilike.%$search%,skills.ilike.%$search%,category.ilike.%$search%,city.ilike.%$search%,state.ilike.%$search%'
+          );
+        }
+        if (category.isNotEmpty) {
+          query = query.eq('category', category);
+        }
+        // Strict state/city filtering
+        if (state.isNotEmpty) {
+          query = query.eq('state', state);
+        }
+        if (city.isNotEmpty) {
+          query = query.eq('city', city);
+        }
       }
 
       final response = await query;
