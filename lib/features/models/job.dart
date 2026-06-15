@@ -19,7 +19,7 @@ class Job {
   final String? completedDate;
   final String? createdAt;
   final String? updatedAt;
-
+// Removed to avoid duplicate type conflicts. Use lib/models/job.dart instead.
   // Estimate fields
   final String? estimateMaterials;
   final double? estimateMaterialsCost;

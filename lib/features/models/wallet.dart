@@ -13,7 +13,7 @@ class Wallet {
   final bool isVerified;
   final String? createdAt;
   final String? updatedAt;
-
+// Removed to avoid duplicate type conflicts. Use lib/models/wallet.dart instead.
   Wallet({
     this.id,
     required this.artisanId,

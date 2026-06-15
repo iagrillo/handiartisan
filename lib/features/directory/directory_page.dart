@@ -65,8 +65,10 @@ class _DirectoryPageState extends State<DirectoryPage>
       duration: const Duration(milliseconds: 250),
     );
     _animationController.forward();
-    _loadInitialData();
-    _loadSponsoredItems();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _loadInitialData();
+      _loadSponsoredItems();
+    });
   }
 
   @override
@@ -556,15 +558,109 @@ class _DirectoryPageState extends State<DirectoryPage>
 
   Future<void> _loadSponsoredItems() async {
     try {
-      final response = await Supabase.instance.client
-          .from('sponsored_items')
-          .select()
-          .eq('category', 'artisan')
-          .order('created_at', ascending: false);
+      // Try to get user location
+      double? lat = _userLatitude;
+      double? lng = _userLongitude;
+      if (lat == null || lng == null) {
+        final position = await _locationService.getCurrentPosition();
+        if (position != null) {
+          lat = position.latitude;
+          lng = position.longitude;
+        }
+      }
+
+      List<dynamic> response = [];
+      if (lat != null && lng != null) {
+        // Try to fetch sponsored items near user location
+        response = await Supabase.instance.client
+            .from('sponsored_items')
+            .select()
+            .eq('category', 'artisan')
+            .order('created_at', ascending: false)
+            .limit(10);
+
+        // Filter by location if possible (assuming city/state fields exist)
+        response = response.where((item) {
+          final city = item['city']?.toString()?.toLowerCase();
+          final state = item['state']?.toString()?.toLowerCase();
+          final userCity = _city.toLowerCase();
+          final userState = _state.toLowerCase();
+          if (_city.isNotEmpty && city != null && city == userCity) return true;
+          if (_state.isNotEmpty && state != null && state == userState) return true;
+          return false;
+        }).toList();
+      }
+
+      // If still empty, fallback to all sponsored items
+      if (response.isEmpty) {
+        response = await Supabase.instance.client
+            .from('sponsored_items')
+            .select()
+            .eq('category', 'artisan')
+            .order('created_at', ascending: false)
+            .limit(10);
+      }
+
+      // If still empty, fallback to hardcoded list
+      if (response.isEmpty && mounted) {
+        setState(() {
+          _sponsoredServiceItems = [
+            SponsoredItem(
+              id: '1',
+              title: 'Tolex Paint',
+              subtitle: 'Painting Services',
+              offer: '10% Off',
+              rating: 4.6,
+              phone: '08020000001',
+              whatsapp: '08020000001',
+              iconName: 'format_paint_outlined',
+              category: 'Painting',
+              createdAt: DateTime.now(),
+            ),
+            SponsoredItem(
+              id: '2',
+              title: 'Wills Carpenter',
+              subtitle: 'Carpentry Services',
+              offer: 'Free Quote',
+              rating: 4.7,
+              phone: '08020000002',
+              whatsapp: '08020000002',
+              iconName: 'carpenter_outlined',
+              category: 'Carpentry',
+              createdAt: DateTime.now(),
+            ),
+            SponsoredItem(
+              id: '3',
+              title: 'Ace Paint Experts',
+              subtitle: 'Painting Experts',
+              offer: '5% Off',
+              rating: 4.5,
+              phone: '08020000003',
+              whatsapp: '08020000003',
+              iconName: 'format_paint_outlined',
+              category: 'Painting',
+              createdAt: DateTime.now(),
+            ),
+            SponsoredItem(
+              id: '4',
+              title: 'Precision Tiling',
+              subtitle: 'Tiling Services',
+              offer: 'Discount',
+              rating: 4.8,
+              phone: '08020000004',
+              whatsapp: '08020000004',
+              iconName: 'handyman_outlined',
+              category: 'Tiling',
+              createdAt: DateTime.now(),
+            ),
+          ];
+        });
+        return;
+      }
 
       if (mounted) {
         setState(() {
-          _sponsoredServiceItems = (response as List)
+          _sponsoredServiceItems = response
               .map((item) => SponsoredItem.fromJson(item as Map<String, dynamic>))
               .toList();
         });
@@ -604,24 +700,12 @@ class _DirectoryPageState extends State<DirectoryPage>
     } else {
       try {
         final position = await LocationHelper.getCurrentPosition();
-        if (position != null) {
-          setState(() {
-            _locationEnabled = true;
-            _userLatitude = position.latitude;
-            _userLongitude = position.longitude;
-          });
-          provider.setNearMe(true, lat: position.latitude, lng: position.longitude);
-        } else {
-          if (mounted) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text(
-                    'Could not get location. Please enable location services and permissions.'),
-                backgroundColor: AppTheme.error,
-              ),
-            );
-          }
-        }
+        setState(() {
+          _locationEnabled = true;
+          _userLatitude = position.latitude;
+          _userLongitude = position.longitude;
+        });
+        provider.setNearMe(true, lat: position.latitude, lng: position.longitude);
       } catch (e) {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(

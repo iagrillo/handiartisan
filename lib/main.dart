@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'services/paystack_service.dart';
 
 import 'providers/auth_provider.dart';
@@ -45,31 +44,36 @@ Route<dynamic>? _buildAuthCallbackRoute(RouteSettings settings) {
   );
 }
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
 
   String supabaseUrl;
   String supabaseKey;
   String paystackPublicKey;
 
-  if (kIsWeb) {
+  try {
     await dotenv.load(fileName: ".env");
-  } else {
-    await dotenv.load();
+    debugPrint('dotenv loaded successfully');
+  } catch (e) {
+    debugPrint('ERROR loading dotenv: $e');
   }
+
   supabaseUrl = dotenv.env['SUPABASE_URL'] ?? '';
   supabaseKey = dotenv.env['SUPABASE_ANON_KEY'] ?? '';
   paystackPublicKey = dotenv.env['PAYSTACK_PUBLIC_KEY'] ?? '';
 
-  debugPrint('Initializing Supabase with URL: $supabaseUrl');
+  debugPrint('Supabase URL: $supabaseUrl');
+  debugPrint('Supabase Key empty: ${supabaseKey.isEmpty}');
 
-
-  await SupabaseUtils.init(
-    url: supabaseUrl,
-    anonKey: supabaseKey,
-  );
+  try {
+    await SupabaseUtils.init(
+      url: supabaseUrl,
+      anonKey: supabaseKey,
+    );
+    debugPrint('Supabase initialized successfully');
+  } catch (e) {
+    debugPrint('ERROR initializing Supabase: $e');
+  }
 
   Supabase.instance.client.auth.onAuthStateChange.listen((data) {
     if (data.event == AuthChangeEvent.passwordRecovery) {

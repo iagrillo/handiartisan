@@ -1,19 +1,42 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-/// Utility for initializing and accessing Supabase client.
-///
-/// Usage: Call [SupabaseUtils.init] at app startup, passing the URL and anon key.
-/// Recommended: Use flutter_dotenv to load these from a .env file.
+class _InMemoryLocalStorage implements LocalStorage {
+  String? _persistSession;
+
+  @override
+  Future<void> initialize() async {}
+
+  @override
+  Future<bool> hasAccessToken() async => _persistSession != null;
+
+  @override
+  Future<String?> accessToken() async => _persistSession;
+
+  @override
+  Future<void> removePersistedSession() async {
+    _persistSession = null;
+  }
+
+  @override
+  Future<void> persistSession(String persistSessionString) async {
+    _persistSession = persistSessionString;
+  }
+}
+
 class SupabaseUtils {
   static SupabaseClient? _client;
 
-  /// Initialize Supabase (call this at app startup)
   static Future<void> init({required String url, required String anonKey}) async {
-    await Supabase.initialize(url: url, anonKey: anonKey);
+    await Supabase.initialize(
+      url: url,
+      anonKey: anonKey,
+      authOptions: FlutterAuthClientOptions(
+        localStorage: _InMemoryLocalStorage(),
+      ),
+    );
     _client = Supabase.instance.client;
   }
 
-  /// Get the Supabase client
   static SupabaseClient get client {
     if (_client == null) {
       throw Exception('Supabase not initialized. Call SupabaseUtils.init first.');

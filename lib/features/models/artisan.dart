@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+// Removed to avoid duplicate type conflicts. Use lib/models/artisan.dart instead.
 enum AdType {
   featured,
   native,

@@ -81,9 +81,9 @@ class PasswordRecoveryService {
       );
 
       return const EmailRecoveryDispatchResult(
-        delivery: EmailRecoveryDelivery.otp,
+        delivery: EmailRecoveryDelivery.resetLink,
         message:
-            'If an account exists for that email, a recovery code has been sent. Check your inbox (and spam folder).',
+            'If an account exists for that email, a recovery link has been sent. Check your inbox (and spam folder).',
       );
     } on AuthApiException catch (error) {
       final authMessage = '${error.message} ${error.code ?? ''}'.toLowerCase();

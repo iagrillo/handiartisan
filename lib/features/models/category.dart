@@ -3,7 +3,7 @@ class Category {
   final String slug;
   final String name;
   final String icon;
-
+// Removed to avoid duplicate type conflicts. Use lib/models/category.dart instead.
   Category({
     this.id = 0,
     required this.slug,

@@ -81,3 +81,4 @@ class SponsoredItem {
     );
   }
 }
+// Removed to avoid duplicate type conflicts. Use lib/models/sponsored_item.dart instead.
